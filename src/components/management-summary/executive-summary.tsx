@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { TrendingUp, Star, Zap, Smartphone, Clock, Search, Crown, Music } from 'lucide-react';
+import AnimatedCounter, { PulsingMetric } from './animated-counter';
 
 interface ProjectMetrics {
   performanceImprovement: string;
@@ -158,14 +159,16 @@ export default function ExecutiveSummary({
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
         >
           {technicalHighlights.map((metric, index) => (
-            <div key={index} className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 group hover:transform hover:scale-105">
+            <PulsingMetric key={index} className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 group hover:transform hover:scale-105">
               <div className="flex items-center space-x-3 mb-4">
                 <div>{metric.icon}</div>
                 <div className="flex-1">
-                  <div className="text-2xl font-bold text-white">
-                    {metric.value}
-                  </div>
-                  <div className="text-sm text-gray-400">
+                  <AnimatedCounter 
+                    value={metric.value}
+                    className="text-2xl font-bold text-white block"
+                    duration={2000 + index * 200}
+                  />
+                  <div className="text-sm text-gray-400 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {metric.label}
                   </div>
                 </div>
@@ -182,7 +185,7 @@ export default function ExecutiveSummary({
                   <p className="text-sm text-gray-300">{metric.roadmap}</p>
                 </div>
               </div>
-            </div>
+            </PulsingMetric>
           ))}
         </motion.div>
 

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/navigation';
+import TimelineOverview from '@/components/management-summary/timeline-overview';
 import ManagementSummaryHero from '@/components/management-summary/hero-section';
 import ExecutiveSummary from '@/components/management-summary/executive-summary';
 import PerformanceGallery from '@/components/management-summary/performance-gallery';
@@ -26,6 +27,9 @@ export default function ManagementSummaryPage() {
       
       <main>
         <ManagementSummaryHero />
+        
+        {/* Timeline Overview */}
+        <TimelineOverview />
         
         <div className="relative">
           {/* Executive Summary with enhanced KPIs */}

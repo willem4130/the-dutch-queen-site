@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Crown, Music, Star, TrendingUp } from 'lucide-react';
+import AnimatedCounter, { PulsingMetric } from './animated-counter';
 
 export default function ManagementSummaryHero() {
   return (
@@ -58,30 +59,46 @@ export default function ManagementSummaryHero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
-          <div className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
+          <PulsingMetric className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
             <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-2" />
-            <div className="text-3xl font-bold text-white">+57%</div>
-            <div className="text-sm text-gray-300">Performance Gain</div>
-            <div className="text-xs text-yellow-400 mt-1">Core Web Vitals</div>
-          </div>
-          <div className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
+            <AnimatedCounter 
+              value="+57%" 
+              className="text-3xl font-bold text-white block"
+              duration={2500}
+            />
+            <div className="text-sm text-gray-300 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>Performance Gain</div>
+            <div className="text-xs text-yellow-400 mt-1 font-semibold">Core Web Vitals</div>
+          </PulsingMetric>
+          <PulsingMetric className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
             <Star className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-            <div className="text-3xl font-bold text-white">96%</div>
-            <div className="text-sm text-gray-300">Accessibility Score</div>
-            <div className="text-xs text-yellow-400 mt-1">WCAG Compliant</div>
-          </div>
-          <div className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
+            <AnimatedCounter 
+              value="96%" 
+              className="text-3xl font-bold text-white block"
+              duration={2000}
+            />
+            <div className="text-sm text-gray-300 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>Accessibility Score</div>
+            <div className="text-xs text-yellow-400 mt-1 font-semibold">WCAG Compliant</div>
+          </PulsingMetric>
+          <PulsingMetric className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
             <Music className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-            <div className="text-3xl font-bold text-white">1.8s</div>
-            <div className="text-sm text-gray-300">Load Time</div>
-            <div className="text-xs text-yellow-400 mt-1">Mobile Optimized</div>
-          </div>
-          <div className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
+            <AnimatedCounter 
+              value="1.8s" 
+              className="text-3xl font-bold text-white block"
+              duration={1800}
+            />
+            <div className="text-sm text-gray-300 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>Load Time</div>
+            <div className="text-xs text-yellow-400 mt-1 font-semibold">Mobile Optimized</div>
+          </PulsingMetric>
+          <PulsingMetric className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center hover:border-yellow-400/50 transition-all duration-300 transform hover:scale-105">
             <Crown className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-            <div className="text-3xl font-bold text-white">100%</div>
-            <div className="text-sm text-gray-300">Royal Quality</div>
-            <div className="text-xs text-yellow-400 mt-1">Client Satisfaction</div>
-          </div>
+            <AnimatedCounter 
+              value="100%" 
+              className="text-3xl font-bold text-white block"
+              duration={3000}
+            />
+            <div className="text-sm text-gray-300 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>Royal Quality</div>
+            <div className="text-xs text-yellow-400 mt-1 font-semibold">Client Satisfaction</div>
+          </PulsingMetric>
         </motion.div>
 
         {/* Enhanced CTA with conversion focus */}

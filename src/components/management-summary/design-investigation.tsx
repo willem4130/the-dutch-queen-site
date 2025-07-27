@@ -42,6 +42,23 @@ export default function DesignInvestigation() {
             Every design decision was backed by thorough research and strategic analysis. 
             From color psychology to typography selection, each element serves a purpose.
           </p>
+          
+          {/* Visual Inspiration Preview */}
+          <div className="mt-8 flex justify-center">
+            <div className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-4 max-w-md">
+              <img 
+                src="/performance-shot.jpeg" 
+                alt="Design Inspiration from Performance" 
+                className="w-full h-32 object-cover rounded-lg mb-3"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <p className="text-xs text-yellow-400 text-center font-medium">
+                Visual inspiration extracted from live performance imagery
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Color Palette */}

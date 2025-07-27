@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Zap, Code, Smartphone, Shield, TrendingUp } from 'lucide-react';
+import AnimatedCounter, { PulsingMetric } from './animated-counter';
 
 export default function ImplementationAnalysis() {
   const techStack = [
@@ -52,6 +53,34 @@ export default function ImplementationAnalysis() {
           className="mb-16"
         >
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Technology Stack</h3>
+          
+          {/* Tech Stack Visual */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-4 max-w-sm">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-700/20 rounded-lg p-3 text-center">
+                  <Code className="w-6 h-6 text-blue-400 mx-auto mb-1" />
+                  <div className="text-xs text-blue-300 font-semibold">Next.js 15</div>
+                </div>
+                <div className="bg-gradient-to-br from-purple-500/20 to-purple-700/20 rounded-lg p-3 text-center">
+                  <Shield className="w-6 h-6 text-purple-400 mx-auto mb-1" />
+                  <div className="text-xs text-purple-300 font-semibold">TypeScript</div>
+                </div>
+                <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-700/20 rounded-lg p-3 text-center">
+                  <Smartphone className="w-6 h-6 text-cyan-400 mx-auto mb-1" />
+                  <div className="text-xs text-cyan-300 font-semibold">Tailwind</div>
+                </div>
+                <div className="bg-gradient-to-br from-pink-500/20 to-pink-700/20 rounded-lg p-3 text-center">
+                  <TrendingUp className="w-6 h-6 text-pink-400 mx-auto mb-1" />
+                  <div className="text-xs text-pink-300 font-semibold">Motion</div>
+                </div>
+              </div>
+              <p className="text-xs text-yellow-400 text-center mt-3 font-medium">
+                Modern tech stack for optimal performance
+              </p>
+            </div>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {techStack.map((tech, index) => (
               <div key={index} className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6">
@@ -76,14 +105,18 @@ export default function ImplementationAnalysis() {
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Performance Improvements</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {performanceMetrics.map((metric, index) => (
-              <div key={index} className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center">
-                <h4 className="text-lg font-semibold text-white mb-4">{metric.metric}</h4>
+              <PulsingMetric key={index} className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center">
+                <h4 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>{metric.metric}</h4>
                 <div className="space-y-2">
                   <div className="text-sm text-gray-400">Before: {metric.before}</div>
-                  <div className="text-sm text-white">After: {metric.after}</div>
-                  <div className="text-lg font-bold text-green-400">+{metric.improvement}</div>
+                  <div className="text-sm text-white font-medium">After: {metric.after}</div>
+                  <AnimatedCounter 
+                    value={`+${metric.improvement}`}
+                    className="text-lg font-bold text-green-400 block"
+                    duration={1500 + index * 300}
+                  />
                 </div>
-              </div>
+              </PulsingMetric>
             ))}
           </div>
         </motion.div>
