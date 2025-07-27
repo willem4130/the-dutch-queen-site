@@ -1,4 +1,3 @@
-import { Compare } from "@/components/ui/compare";
 import { HeroSection } from "@/components/sections/hero";
 import { AboutSection } from "@/components/sections/about";
 import { PerformancesSection } from "@/components/sections/performances";

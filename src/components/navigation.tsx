@@ -21,6 +21,7 @@ export function Navigation() {
     { name: "Performances", href: "#performances" },
     { name: "Shows", href: "#shows" },
     { name: "Contact", href: "#contact" },
+    { name: "Project Summary", href: "/management-summary" },
   ];
 
   return (

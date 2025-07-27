@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Oswald:wght@400;500;600&family=Source+Sans+Pro:wght@400;600&family=Inter:wght@500;700&display=swap');
+/* Optimized font loading with timeout protection */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Oswald:wght@400;500;600&family=Source+Sans+Pro:wght@400;600&family=Inter:wght@500;700&display=swap")
+layer(fonts);
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -77,7 +79,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  
+
   /* Queen-inspired color palette */
   --royal-gold: oklch(0.85 0.2 85);
   --royal-gold-dark: oklch(0.7 0.25 80);
@@ -87,6 +89,12 @@
   --warm-white: oklch(0.98 0.02 85);
   --stage-purple: oklch(0.4 0.2 300);
   --accent-copper: oklch(0.65 0.15 50);
+
+  /* Font fallbacks for timeout protection */
+  --font-cinzel: "Cinzel", "Times New Roman", "Times", serif;
+  --font-oswald: "Oswald", "Arial Black", "Helvetica Bold", sans-serif;
+  --font-source: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
+  --font-inter: "Inter", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 .dark {
@@ -129,10 +137,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
   }
-  
+
   /* Typography System - Font families handled by Tailwind config */
-  
+
   /* Typography handled by Tailwind font family utilities */
 }
