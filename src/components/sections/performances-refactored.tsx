@@ -97,7 +97,7 @@ export function PerformancesSectionRefactored() {
             <h3 className="text-3xl font-bold mb-4">Ready to Rock?</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Whether you want the full stadium experience or an intimate acoustic session, 
-              we'll make your event unforgettable with the timeless music of Queen.
+              we&apos;ll make your event unforgettable with the timeless music of Queen.
             </p>
             <a
               href="#contact"

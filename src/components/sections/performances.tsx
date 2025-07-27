@@ -127,16 +127,37 @@ export function PerformancesSection() {
               </div>
 
               <div className="relative">
-                <div className="relative overflow-hidden rounded-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                    alt="Full band performance"
-                    className="w-full h-96 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-red-900/50 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h4 className="text-2xl font-bold text-white mb-2">Stadium Energy</h4>
-                    <p className="text-gray-200">Complete Queen experience with full production</p>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <img
+                      src="/full-band-performance.jpg"
+                      alt="Full band performance with dynamic energy"
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/50 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h4 className="text-2xl font-bold text-white mb-2">Stadium Energy</h4>
+                      <p className="text-gray-200">Complete Queen experience with full production</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img
+                        src="/performance-stage-lighting.jpg"
+                        alt="Performance with professional stage lighting"
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    </div>
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img
+                        src="/performance-vocals.jpg"
+                        alt="Powerful vocal performance"
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -156,7 +177,7 @@ export function PerformancesSection() {
                 <h3 className="text-4xl font-bold mb-6 text-yellow-400">Acoustic Sessions</h3>
                 <div className="space-y-6">
                   <p className="text-gray-300 text-lg leading-relaxed">
-                    Intimate, stripped-down versions of Queen's greatest hits with close audience interaction 
+                    Intimate, stripped-down versions of Queen&apos;s greatest hits with close audience interaction 
                     and emotional connection. Perfect for private events and acoustic venues.
                   </p>
                   
@@ -195,16 +216,27 @@ export function PerformancesSection() {
               </div>
 
               <div className="relative lg:order-1">
-                <div className="relative overflow-hidden rounded-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                    alt="Acoustic performance"
-                    className="w-full h-96 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-yellow-900/50 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h4 className="text-2xl font-bold text-white mb-2">Intimate Connection</h4>
-                    <p className="text-gray-200">Stripped-down Queen classics with emotional depth</p>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <img
+                      src="/acoustic-performance.jpg"
+                      alt="Intimate acoustic performance"
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-yellow-900/50 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h4 className="text-2xl font-bold text-white mb-2">Intimate Connection</h4>
+                      <p className="text-gray-200">Stripped-down Queen classics with emotional depth</p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src="/performance-guitar.jpg"
+                      alt="Acoustic guitar performance with dramatic lighting"
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   </div>
                 </div>
               </div>
@@ -224,7 +256,7 @@ export function PerformancesSection() {
             <h3 className="text-3xl font-bold mb-4">Ready to Rock?</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Whether you want the full stadium experience or an intimate acoustic session, 
-              we'll make your event unforgettable with the timeless music of Queen.
+              we&apos;ll make your event unforgettable with the timeless music of Queen.
             </p>
             <a
               href="#contact"

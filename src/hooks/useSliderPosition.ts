@@ -19,7 +19,7 @@ interface UseSliderPositionReturn {
  * Extracts complex mouse event handling and state management
  */
 export function useSliderPosition(
-  containerRef: RefObject<HTMLDivElement>,
+  containerRef: RefObject<HTMLDivElement | null>,
   { slideMode, onSliderMove }: UseSliderPositionProps
 ): UseSliderPositionReturn {
   const [sliderPosition, setSliderPosition] = useState(50);

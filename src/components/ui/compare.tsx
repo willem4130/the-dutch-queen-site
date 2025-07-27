@@ -103,12 +103,21 @@ export const Compare: React.FC<CompareProps> = ({
         </div>
       </div>
 
-      {/* Labels */}
-      <div className="absolute top-4 left-4 bg-black/50 text-white px-2 py-1 rounded text-sm font-medium">
-        Full Band
+      {/* Enhanced Labels with 2025 Design Trends */}
+      <div className="absolute bottom-6 left-6 group">
+        <div className="relative bg-gradient-to-r from-yellow-400/20 to-red-600/20 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-xl text-lg font-bold tracking-wide transition-all duration-500 transform group-hover:scale-110 group-hover:bg-gradient-to-r group-hover:from-yellow-400/30 group-hover:to-red-600/30 group-hover:shadow-lg group-hover:shadow-yellow-400/25">
+          <span className="relative z-10 drop-shadow-lg">Full Band</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-red-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
+        </div>
+        <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-yellow-400 to-red-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
       </div>
-      <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm font-medium">
-        Acoustic
+      
+      <div className="absolute bottom-6 right-6 group">
+        <div className="relative bg-gradient-to-l from-yellow-400/20 to-red-600/20 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-xl text-lg font-bold tracking-wide transition-all duration-500 transform group-hover:scale-110 group-hover:bg-gradient-to-l group-hover:from-yellow-400/30 group-hover:to-red-600/30 group-hover:shadow-lg group-hover:shadow-yellow-400/25">
+          <span className="relative z-10 drop-shadow-lg">Acoustic</span>
+          <div className="absolute inset-0 bg-gradient-to-l from-yellow-400/10 to-red-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right rounded-xl"></div>
+        </div>
+        <div className="absolute -bottom-1 right-0 w-0 h-1 bg-gradient-to-l from-yellow-400 to-red-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
       </div>
     </div>
   );

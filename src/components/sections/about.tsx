@@ -39,7 +39,7 @@ export function AboutSection() {
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             From the heart of the Netherlands comes a tribute to the greatest rock band of all time. 
-            We don't just play Queen's music - we live it, breathe it, and share it with the world.
+            We don&apos;t just play Queen&apos;s music - we live it, breathe it, and share it with the world.
           </motion.p>
         </motion.div>
 
@@ -53,9 +53,9 @@ export function AboutSection() {
             <h3 className="text-3xl font-bold mb-6 text-yellow-400">Our Story</h3>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                Born from a shared passion for Queen's timeless music, The Dutch Queen has been 
+                Born from a shared passion for Queen&apos;s timeless music, The Dutch Queen has been 
                 captivating audiences across the Netherlands and beyond since our formation. We understand 
-                that Queen's music deserves nothing less than perfection.
+                that Queen&apos;s music deserves nothing less than perfection.
               </p>
               <p>
                 What sets us apart is our unique dual approach: we offer both the full stadium experience 
@@ -63,9 +63,9 @@ export function AboutSection() {
                 showcase the raw emotional power of these legendary songs.
               </p>
               <p>
-                Every performance is a celebration of Freddie Mercury's legacy, Brian May's genius, 
-                Roger Taylor's rhythm, and John Deacon's foundation - delivered with the passion and 
-                precision that Queen's music demands.
+                Every performance is a celebration of Freddie Mercury&apos;s legacy, Brian May&apos;s genius, 
+                Roger Taylor&apos;s rhythm, and John Deacon&apos;s foundation - delivered with the passion and 
+                precision that Queen&apos;s music demands.
               </p>
             </div>
           </motion.div>
@@ -79,8 +79,8 @@ export function AboutSection() {
           >
             <div className="relative overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                alt="The Dutch Queen band performing"
+                src="/performance-stage-lighting.jpg"
+                alt="The Dutch Queen performing with professional stage lighting and production"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -127,9 +127,9 @@ export function AboutSection() {
         >
           <h3 className="text-3xl font-bold mb-6 text-yellow-400">Our Mission</h3>
           <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-            To honor Queen's incredible legacy by delivering performances that capture not just the sound, 
-            but the spirit, energy, and emotion that made them legends. Whether it's the thunderous power 
-            of "We Will Rock You" or the tender beauty of "Love of My Life," we bring Queen's magic to life 
+            To honor Queen&apos;s incredible legacy by delivering performances that capture not just the sound, 
+            but the spirit, energy, and emotion that made them legends. Whether it&apos;s the thunderous power 
+            of &quot;We Will Rock You&quot; or the tender beauty of &quot;Love of My Life,&quot; we bring Queen&apos;s magic to life 
             for new generations to experience and cherish.
           </p>
         </motion.div>

@@ -59,7 +59,7 @@ export function ContactSection() {
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to bring the magic of Queen to your event? Get in touch with us for a custom quote 
-            and let's create an unforgettable experience together.
+            and let&apos;s create an unforgettable experience together.
           </p>
         </motion.div>
 
