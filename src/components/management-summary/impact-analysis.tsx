@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { DollarSign, Users, TrendingUp, Star, Target, Award } from 'lucide-react';
+import { DollarSign, Users, TrendingUp, Target, Award } from 'lucide-react';
 
 export default function ImpactAnalysis() {
   const businessMetrics = [
@@ -121,7 +121,7 @@ export default function ImpactAnalysis() {
                   <h4 className="text-lg font-semibold text-white">{perspective.role}</h4>
                 </div>
                 <blockquote className="text-gray-300 italic mb-4">
-                  "{perspective.feedback}"
+                  &quot;{perspective.feedback}&quot;
                 </blockquote>
                 <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-3">
                   <p className="text-sm text-yellow-400 font-medium">{perspective.impact}</p>

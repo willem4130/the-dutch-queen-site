@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Palette, Search, Lightbulb, Eye } from 'lucide-react';
+import { Palette, Search } from 'lucide-react';
 
 export default function DesignInvestigation() {
   const colorEvolution = [

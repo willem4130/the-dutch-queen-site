@@ -47,7 +47,7 @@ export default function ManagementSummaryHero() {
           
           <p className="text-lg md:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: 'Source Sans Pro, sans-serif' }}>
             A comprehensive analysis of strategic decisions, design investigations, and implementation excellence 
-            that transformed a tribute band's digital presence into a world-class, royal-inspired experience.
+            that transformed a tribute band&apos;s digital presence into a world-class, royal-inspired experience.
           </p>
         </motion.div>
 

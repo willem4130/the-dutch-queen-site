@@ -119,7 +119,7 @@ export default function ManagementSummaryPage() {
           </h3>
           <p className="text-xl text-black/80 mb-8 max-w-3xl mx-auto">
             This management summary demonstrates our strategic approach to creating exceptional digital experiences. 
-            Let's discuss how we can apply this level of excellence to your next project.
+            Let&apos;s discuss how we can apply this level of excellence to your next project.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Zap, Code, Smartphone, Shield, TrendingUp, CheckCircle } from 'lucide-react';
+import { Zap, Code, Smartphone, Shield, TrendingUp } from 'lucide-react';
 
 export default function ImplementationAnalysis() {
   const techStack = [

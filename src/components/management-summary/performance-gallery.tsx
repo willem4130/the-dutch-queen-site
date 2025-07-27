@@ -70,7 +70,7 @@ export default function PerformanceGallery() {
           </h2>
           
           <p className="text-lg md:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            The Dutch Queen's professional performance imagery showcases the quality and theatrical excellence 
+            The Dutch Queen&apos;s professional performance imagery showcases the quality and theatrical excellence 
             that this website transformation aimed to capture and amplify. These visuals directly inspired our design direction.
           </p>
         </motion.div>
@@ -153,7 +153,7 @@ export default function PerformanceGallery() {
             <Star className="w-8 h-8 text-yellow-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-white mb-3">Brand Authenticity</h3>
             <p className="text-gray-300 text-sm">
-              Real performance imagery ensures the website accurately represents the band's professional quality and stage presence.
+              Real performance imagery ensures the website accurately represents the band&apos;s professional quality and stage presence.
             </p>
           </div>
           
