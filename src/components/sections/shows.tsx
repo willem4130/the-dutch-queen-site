@@ -106,7 +106,7 @@ export function ShowsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Upcoming <span className="bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">Shows</span>
+            Upcoming <span className="bg-gradient-to-r from-royal-bronze to-queen-burgundy bg-clip-text text-transparent">Shows</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Join us for unforgettable Queen experiences across the Netherlands. From intimate acoustic sessions to full stadium productions.
@@ -133,7 +133,7 @@ export function ShowsSection() {
                   <div className="flex items-center space-x-4">
                     <div className="text-center min-w-[80px]">
                       <div className="text-3xl font-bold text-white">{dateInfo.day}</div>
-                      <div className="text-sm text-yellow-400 font-semibold">{dateInfo.month}</div>
+                      <div className="text-sm text-royal-bronze font-semibold">{dateInfo.month}</div>
                       <div className="text-xs text-gray-400">{dateInfo.weekday}</div>
                     </div>
                     
@@ -145,8 +145,8 @@ export function ShowsSection() {
                       <div className="flex items-center space-x-2 mt-2">
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                           show.type === "Full Band" 
-                            ? "bg-red-600/20 text-red-400 border border-red-600/30" 
-                            : "bg-yellow-600/20 text-yellow-400 border border-yellow-600/30"
+                            ? "bg-queen-burgundy/20 text-queen-burgundy border border-queen-burgundy/30" 
+                            : "bg-royal-bronze/20 text-royal-bronze border border-royal-bronze/30"
                         }`}>
                           {show.type}
                         </span>
@@ -163,7 +163,7 @@ export function ShowsSection() {
                     </div>
                     
                     {show.status !== "sold-out" && (
-                      <button className="bg-gradient-to-r from-yellow-400 to-red-600 text-black px-6 py-2 rounded-full font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-200 transform hover:scale-105">
+                      <button className="bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white px-6 py-2 rounded-full font-semibold hover:from-royal-bronze-dark hover:to-queen-burgundy-dark transition-all duration-200 transform hover:scale-105">
                         Get Tickets
                       </button>
                     )}
@@ -180,9 +180,9 @@ export function ShowsSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="bg-gradient-to-r from-red-900/20 to-yellow-900/20 rounded-3xl p-8 md:p-12 text-center border border-white/10"
+          className="bg-gradient-to-r from-queen-burgundy/20 to-royal-bronze/20 rounded-3xl p-8 md:p-12 text-center border border-accent-steel/10"
         >
-          <h3 className="text-3xl font-bold mb-4 text-yellow-400">Never Miss a Show</h3>
+          <h3 className="text-3xl font-bold mb-4 text-royal-bronze">Never Miss a Show</h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Be the first to know about new tour dates, exclusive acoustic sessions, and special events. 
             Join our mailing list for priority access to tickets.
@@ -192,9 +192,9 @@ export function ShowsSection() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-black border border-gray-600 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors"
+              className="flex-1 px-4 py-3 bg-black border border-gray-600 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-royal-bronze transition-colors"
             />
-            <button className="bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-3 rounded-full font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-200 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white px-8 py-3 rounded-full font-semibold hover:from-royal-bronze-dark hover:to-queen-burgundy-dark transition-all duration-200 transform hover:scale-105">
               Subscribe
             </button>
           </div>

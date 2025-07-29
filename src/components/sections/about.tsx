@@ -37,7 +37,7 @@ export function AboutSection() {
             variants={fadeInUp}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            About <span className="bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">The Dutch Queen</span>
+            About <span className="bg-gradient-to-r from-royal-bronze to-queen-burgundy bg-clip-text text-transparent">The Dutch Queen</span>
           </motion.h2>
           <motion.p 
             variants={fadeInUp}
@@ -124,9 +124,9 @@ export function AboutSection() {
           initial={false}
           animate={mounted ? "visible" : "hidden"}
           variants={fadeInUp}
-          className="bg-gradient-to-r from-red-900/20 to-yellow-900/20 rounded-3xl p-8 md:p-12 text-center border border-white/10"
+          className="bg-gradient-to-r from-queen-burgundy/20 to-royal-bronze/20 rounded-3xl p-8 md:p-12 text-center border border-accent-steel/10"
         >
-          <h3 className="text-3xl font-bold mb-6 text-yellow-400">Our Mission</h3>
+          <h3 className="text-3xl font-bold mb-6 text-royal-bronze">Our Mission</h3>
           <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
             To honor Queen&apos;s incredible legacy by delivering performances that capture not just the sound, 
             but the spirit, energy, and emotion that made them legends. Whether it&apos;s the thunderous power 

@@ -54,15 +54,17 @@ module.exports = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        // Queen-inspired colors
-        'royal-gold': 'oklch(var(--royal-gold))',
-        'royal-gold-dark': 'oklch(var(--royal-gold-dark))',
-        'queen-red': 'oklch(var(--queen-red))',
-        'queen-red-dark': 'oklch(var(--queen-red-dark))',
+        // Queen-inspired colors - Bronze Theme
+        'royal-bronze': 'oklch(var(--royal-bronze))',
+        'royal-bronze-dark': 'oklch(var(--royal-bronze-dark))',
+        'royal-bronze-light': 'oklch(var(--royal-bronze-light))',
+        'queen-burgundy': 'oklch(var(--queen-burgundy))',
+        'queen-burgundy-dark': 'oklch(var(--queen-burgundy-dark))',
         'deep-black': 'oklch(var(--deep-black))',
         'warm-white': 'oklch(var(--warm-white))',
         'stage-purple': 'oklch(var(--stage-purple))',
-        'accent-copper': 'oklch(var(--accent-copper))',
+        'accent-steel': 'oklch(var(--accent-steel))',
+        'accent-bronze': 'oklch(var(--accent-bronze))',
       },
       borderRadius: {
         lg: "var(--radius)",

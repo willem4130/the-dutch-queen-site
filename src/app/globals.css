@@ -80,18 +80,18 @@ layer(fonts);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Royal Rock Color Palette - Sophisticated & Professional */
-  --royal-gold: oklch(0.78 0.15 75); /* Sophisticated antique gold */
-  --royal-gold-dark: oklch(0.65 0.18 70); /* Deeper gold for hierarchy */
-  --royal-gold-light: oklch(0.85 0.12 80); /* Light gold for backgrounds */
+  /* Royal Bronze Color Palette - Cooler & More Sophisticated */
+  --royal-bronze: oklch(0.72 0.08 35); /* Cool bronze main color (less orange) */
+  --royal-bronze-dark: oklch(0.58 0.12 30); /* Deeper bronze for hierarchy */
+  --royal-bronze-light: oklch(0.82 0.06 40); /* Light bronze for backgrounds */
 
   /* Rock Edge Colors - Refined Burgundy */
   --queen-burgundy: oklch(0.45 0.25 25); /* Deep burgundy (not bright red) */
   --queen-burgundy-dark: oklch(0.35 0.28 20); /* Darker burgundy for depth */
 
-  /* Metallic Luxury Accents */
-  --accent-copper: oklch(0.68 0.12 45); /* Warm copper accent */
-  --accent-bronze: oklch(0.55 0.15 40); /* Rich bronze for details */
+  /* Metallic Luxury Accents - Cooler Tones */
+  --accent-steel: oklch(0.65 0.04 220); /* Cool steel accent */
+  --accent-bronze: oklch(0.58 0.08 35); /* Refined bronze for details */
   --accent-platinum: oklch(0.75 0.02 180); /* Cool metallic contrast */
 
   /* Layered Background System */
