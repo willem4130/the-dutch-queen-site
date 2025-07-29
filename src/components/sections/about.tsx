@@ -1,8 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export function AboutSection() {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -22,9 +28,8 @@ export function AboutSection() {
     <section id="about" className="py-24 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          initial={false}
+          animate={mounted ? "visible" : "hidden"}
           variants={staggerChildren}
           className="text-center mb-16"
         >
@@ -45,9 +50,8 @@ export function AboutSection() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial={false}
+            animate={mounted ? "visible" : "hidden"}
             variants={fadeInUp}
           >
             <h3 className="text-3xl font-bold mb-6 text-yellow-400">Our Story</h3>
@@ -71,9 +75,8 @@ export function AboutSection() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial={false}
+            animate={mounted ? "visible" : "hidden"}
             variants={fadeInUp}
             className="relative"
           >
@@ -90,9 +93,8 @@ export function AboutSection() {
 
         {/* Band Stats */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial={false}
+          animate={mounted ? "visible" : "hidden"}
           variants={staggerChildren}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
         >
@@ -119,9 +121,8 @@ export function AboutSection() {
 
         {/* Our Mission */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial={false}
+          animate={mounted ? "visible" : "hidden"}
           variants={fadeInUp}
           className="bg-gradient-to-r from-red-900/20 to-yellow-900/20 rounded-3xl p-8 md:p-12 text-center border border-white/10"
         >

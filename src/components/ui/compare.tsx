@@ -26,6 +26,23 @@ export const Compare: React.FC<CompareProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Calculate zoom scale based on slider position
+  const getZoomScale = (imageType: 'first' | 'second') => {
+    const baseScale = 1;
+    const maxZoom = 1.05;
+    const zoomRange = maxZoom - baseScale;
+    
+    if (imageType === 'first') {
+      // First image (left) zooms when slider is more to the left
+      const visibility = (100 - sliderPosition) / 100;
+      return baseScale + (visibility * zoomRange);
+    } else {
+      // Second image (right) zooms when slider is more to the right
+      const visibility = sliderPosition / 100;
+      return baseScale + (visibility * zoomRange);
+    }
+  };
+
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!containerRef.current) return;
@@ -37,8 +54,11 @@ export const Compare: React.FC<CompareProps> = ({
       const percentage = (x / rect.width) * 100;
       const clampedPercentage = Math.max(0, Math.min(100, percentage));
       
-      setSliderPosition(clampedPercentage);
-      onSliderMove?.(clampedPercentage);
+      // Use requestAnimationFrame for smoother updates
+      requestAnimationFrame(() => {
+        setSliderPosition(clampedPercentage);
+        onSliderMove?.(clampedPercentage);
+      });
     },
     [slideMode, isDragging, onSliderMove]
   );
@@ -73,11 +93,15 @@ export const Compare: React.FC<CompareProps> = ({
       onMouseLeave={handleMouseLeave}
     >
       {/* First Image */}
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full overflow-hidden">
         <img
           src={firstImage}
           alt="First comparison"
-          className={cn("w-full h-full object-cover", firstImageClassName)}
+          className={cn("w-full h-full object-cover transition-transform duration-500 ease-out", firstImageClassName)}
+          style={{ 
+            transform: `scale(${getZoomScale('first')})`,
+            transformOrigin: 'center center'
+          }}
         />
       </div>
 
@@ -89,19 +113,14 @@ export const Compare: React.FC<CompareProps> = ({
         <img
           src={secondImage}
           alt="Second comparison"
-          className={cn("w-full h-full object-cover", secondImageClassname)}
+          className={cn("w-full h-full object-cover transition-transform duration-500 ease-out", secondImageClassname)}
+          style={{ 
+            transform: `scale(${getZoomScale('second')})`,
+            transformOrigin: 'center center'
+          }}
         />
       </div>
 
-      {/* Slider Line */}
-      <div
-        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10 transition-all duration-75"
-        style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
-      >
-        <div className="absolute top-1/2 left-1/2 w-6 h-6 bg-white rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-          <div className="w-2 h-2 bg-gray-400 rounded-full" />
-        </div>
-      </div>
 
       {/* Enhanced Labels with 2025 Design Trends */}
       <div className="absolute bottom-6 left-6 group">

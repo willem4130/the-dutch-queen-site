@@ -35,7 +35,7 @@ export default function ImplementationAnalysis() {
             </span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-cinzel">
             Implementation <span className="bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">Analysis</span>
           </h2>
           
@@ -106,7 +106,7 @@ export default function ImplementationAnalysis() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {performanceMetrics.map((metric, index) => (
               <PulsingMetric key={index} className="bg-black/40 backdrop-blur-xl border border-yellow-400/30 rounded-xl p-6 text-center">
-                <h4 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>{metric.metric}</h4>
+                <h4 className="text-lg font-semibold text-white mb-4 font-inter">{metric.metric}</h4>
                 <div className="space-y-2">
                   <div className="text-sm text-gray-400">Before: {metric.before}</div>
                   <div className="text-sm text-white font-medium">After: {metric.after}</div>

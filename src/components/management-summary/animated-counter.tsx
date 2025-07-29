@@ -32,20 +32,28 @@ export default function AnimatedCounter({ value, duration = 2000, className = ''
     const isDecimal = numericMatch[2].includes('.');
 
     let startValue = 0;
-    const increment = numericValue / (duration / 50); // 50ms intervals
+    let startTime: number;
+    let animationFrame: number;
     
-    const timer = setInterval(() => {
-      startValue += increment;
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
       
-      if (startValue >= numericValue) {
+      // Easing function for smooth animation
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentValue = numericValue * easeOut;
+      
+      if (progress >= 1) {
         setDisplayValue(`${prefix}${isDecimal ? numericValue.toFixed(1) : Math.round(numericValue)}${suffix}`);
-        clearInterval(timer);
       } else {
-        setDisplayValue(`${prefix}${isDecimal ? startValue.toFixed(1) : Math.round(startValue)}${suffix}`);
+        setDisplayValue(`${prefix}${isDecimal ? currentValue.toFixed(1) : Math.round(currentValue)}${suffix}`);
+        animationFrame = requestAnimationFrame(animate);
       }
-    }, 50);
+    };
 
-    return () => clearInterval(timer);
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
   }, [isInView, value, duration]);
 
   return (

@@ -48,7 +48,7 @@ export default function ImpactAnalysis() {
             </span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Cinzel, serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-cinzel">
             Measurable <span className="bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">Results</span>
           </h2>
           

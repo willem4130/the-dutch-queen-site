@@ -80,15 +80,29 @@ layer(fonts);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Queen-inspired color palette */
-  --royal-gold: oklch(0.85 0.2 85);
-  --royal-gold-dark: oklch(0.7 0.25 80);
-  --queen-red: oklch(0.6 0.3 25);
-  --queen-red-dark: oklch(0.45 0.35 20);
-  --deep-black: oklch(0.08 0 0);
+  /* Royal Rock Color Palette - Sophisticated & Professional */
+  --royal-gold: oklch(0.78 0.15 75); /* Sophisticated antique gold */
+  --royal-gold-dark: oklch(0.65 0.18 70); /* Deeper gold for hierarchy */
+  --royal-gold-light: oklch(0.85 0.12 80); /* Light gold for backgrounds */
+
+  /* Rock Edge Colors - Refined Burgundy */
+  --queen-burgundy: oklch(0.45 0.25 25); /* Deep burgundy (not bright red) */
+  --queen-burgundy-dark: oklch(0.35 0.28 20); /* Darker burgundy for depth */
+
+  /* Metallic Luxury Accents */
+  --accent-copper: oklch(0.68 0.12 45); /* Warm copper accent */
+  --accent-bronze: oklch(0.55 0.15 40); /* Rich bronze for details */
+  --accent-platinum: oklch(0.75 0.02 180); /* Cool metallic contrast */
+
+  /* Layered Background System */
+  --deep-black: oklch(0.05 0 0); /* True deep black */
+  --rich-black: oklch(0.08 0.02 20); /* Slightly warm black */
+  --charcoal: oklch(0.15 0.01 15); /* Lighter charcoal */
+  --midnight: oklch(0.12 0.03 30); /* Midnight with hint of warmth */
+
+  /* Legacy colors for compatibility */
   --warm-white: oklch(0.98 0.02 85);
   --stage-purple: oklch(0.4 0.2 300);
-  --accent-copper: oklch(0.65 0.15 50);
 
   /* Font fallbacks for timeout protection */
   --font-cinzel: "Cinzel", "Times New Roman", "Times", serif;
@@ -143,4 +157,11 @@ layer(fonts);
   /* Typography System - Font families handled by Tailwind config */
 
   /* Typography handled by Tailwind font family utilities */
+
+  /* Royal Rock Component Animations */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
