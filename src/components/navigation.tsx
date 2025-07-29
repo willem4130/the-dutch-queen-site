@@ -37,11 +37,11 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/new-logo-small.png" 
-              alt="The Dutch Queen" 
-              className="h-12 w-auto transition-all duration-300 hover:scale-105"
-            />
+            <h1 className="text-2xl md:text-3xl font-bold transition-all duration-300 hover:scale-105" style={{ fontFamily: 'Cinzel, serif' }}>
+              <span className="bg-gradient-to-r from-royal-bronze via-royal-bronze-light to-queen-burgundy bg-clip-text text-transparent">
+                THE DUTCH QUEEN
+              </span>
+            </h1>
           </div>
 
           {/* Enhanced Desktop Navigation with 2025 Micro-interactions */}

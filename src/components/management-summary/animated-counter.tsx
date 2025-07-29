@@ -31,7 +31,7 @@ export default function AnimatedCounter({ value, duration = 2000, className = ''
     const numericValue = parseFloat(numericMatch[2]);
     const isDecimal = numericMatch[2].includes('.');
 
-    let startValue = 0;
+    const startValue = 0;
     let startTime: number;
     let animationFrame: number;
     
