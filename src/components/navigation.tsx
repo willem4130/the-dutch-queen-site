@@ -133,8 +133,13 @@ export function Navigation() {
             <button
               onClick={() => handleSmoothScroll("#contact")}
               onKeyDown={(e) => handleKeyDown(e, "#contact")}
-              className="relative bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide hover:from-royal-bronze-dark hover:to-queen-burgundy-dark transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-royal-bronze/40 group overflow-hidden border border-royal-bronze/20 uppercase"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="relative text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group overflow-hidden border uppercase"
+              style={{ 
+                fontFamily: 'Inter, sans-serif',
+                background: 'linear-gradient(to right, oklch(0.72 0.08 35), oklch(0.45 0.25 25))',
+                borderColor: 'oklch(0.72 0.08 35 / 0.2)',
+                boxShadow: '0 25px 50px -12px oklch(0.72 0.08 35 / 0.4)'
+              }}
               aria-label="Book now - Navigate to contact section"
               title="Book Now"
             >
