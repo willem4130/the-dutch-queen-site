@@ -139,11 +139,11 @@ export function Navigation() {
             >
               <span className="relative z-10 drop-shadow-sm">Book Now</span>
               {/* Animated shimmer effect - bronze tone */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-steel/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-royal-bronze/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-2xl"></div>
               {/* Pulsing glow effect */}
               <div className="absolute -inset-2 bg-gradient-to-r from-royal-bronze/50 to-queen-burgundy/50 blur-lg opacity-0 group-hover:opacity-70 transition-all duration-500 rounded-2xl animate-pulse -z-10"></div>
               {/* Enhanced highlight overlay - subtle bronze */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-steel/10 to-accent-bronze/5 transform scale-95 group-hover:scale-100 transition-transform duration-500 origin-center rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-royal-bronze/10 to-royal-bronze/5 transform scale-95 group-hover:scale-100 transition-transform duration-500 origin-center rounded-2xl"></div>
             </button>
           </div>
 
