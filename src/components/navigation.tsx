@@ -148,11 +148,11 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button with Hamburger Animation */}
-          <div className="md:hidden">
+          <div className="md:hidden relative z-50">
             <Hamburger
               toggled={isMobileMenuOpen}
               toggle={setIsMobileMenuOpen}
-              size={24}
+              size={28}
               color="#d4af37"
               easing="ease-in-out"
               duration={0.5}
