@@ -759,15 +759,7 @@ export default buildConfig({
             {
               name: 'storyContent',
               type: 'richText',
-              defaultValue: [
-                {
-                  children: [
-                    {
-                      text: 'Born from a shared passion for Queen timeless music, The Dutch Queen has been captivating audiences across the Netherlands and beyond since our formation. We understand that Queen music deserves nothing less than perfection.'
-                    }
-                  ]
-                }
-              ],
+              // Remove defaultValue to avoid Lexical migration issues - will use fallbacks in frontend
             },
             {
               name: 'storyImage',

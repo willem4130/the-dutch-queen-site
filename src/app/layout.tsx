@@ -1,8 +1,19 @@
 import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: 'The Dutch Queen',
-  description: 'The Dutch Queen tribute band website and content management system',
+  title: 'The Dutch Queen - Premier Queen Tribute Band',
+  description: 'Experience the magic of Queen with The Dutch Queen - Professional tribute band offering full band and acoustic performances for events across Europe.',
 }
 
 export default function RootLayout({
@@ -12,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }
