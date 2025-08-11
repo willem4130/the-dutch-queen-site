@@ -36,6 +36,61 @@ async function payloadFetch<T>(endpoint: string): Promise<T | null> {
  * These will be updated once payload-types.ts is generated
  */
 
+// Site Settings Types
+export interface SiteSettings {
+  general: {
+    siteName: string;
+    tagline: string;
+    metaDescription: string;
+  };
+  heroSection: {
+    acousticImage?: Media;
+    fullBandImage?: Media;
+    heroTitle: string;
+    heroSubtitle: string;
+  };
+  aboutSection: {
+    mainHeading: string;
+    introText: string;
+    storyHeading: string;
+    storyContent: any; // RichText
+    storyImage?: Media;
+    stats: Array<{
+      label: string;
+      value: string;
+      icon?: string;
+    }>;
+  };
+  contactSection: {
+    pricingGuide: Array<{
+      service: string;
+      priceRange: string;
+    }>;
+    locationInfo: {
+      baseLocation: string;
+      serviceAreas: string;
+    };
+    socialFollowText: string;
+  };
+}
+
+// Performance Types
+export interface PerformanceType {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  idealFor: Array<{ item: string }>;
+  features: Array<{ feature: string }>;
+  songList: Array<{ song: string }>;
+  heroImage?: Media;
+  imageTitle?: string;
+  imageDescription?: string;
+  colorTheme: 'red' | 'yellow';
+  layoutReverse?: boolean;
+  displayOrder: number;
+}
+
 export interface Show {
   id: string;
   title: string;
@@ -186,6 +241,24 @@ export async function getBandPhotos() {
 export async function getBandInfo() {
   const response = await payloadFetch<BandInfo>('/globals/band-info');
   return response;
+}
+
+export async function getSiteSettings() {
+  const response = await payloadFetch<SiteSettings>('/globals/site-settings');
+  return response;
+}
+
+/**
+ * Performance Types API functions
+ */
+export async function getPerformanceTypes() {
+  const response = await payloadFetch<{docs: PerformanceType[]}>('/performance-types?sort=displayOrder');
+  return response?.docs || [];
+}
+
+export async function getPerformanceType(slug: string) {
+  const response = await payloadFetch<{docs: PerformanceType[]}>(`/performance-types?where[slug][equals]=${slug}&limit=1`);
+  return response?.docs?.[0] || null;
 }
 
 /**

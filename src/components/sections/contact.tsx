@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { submitContact } from "../../lib/payload-api";
 import { useBandInfo, getContactEmail, getContactPhone, getSocialLinks } from "../../hooks/useBandInfo";
+import { useSiteSettings, getContactSettings } from "../../hooks/useSiteSettings";
 
 export function ContactSection() {
   const [selectedPerformanceType, setSelectedPerformanceType] = useState<"full-band" | "acoustic" | "both">("both");
@@ -22,9 +23,11 @@ export function ContactSection() {
   const [submitMessage, setSubmitMessage] = useState('');
   
   const { bandInfo } = useBandInfo();
+  const { siteSettings } = useSiteSettings();
   const contactEmail = getContactEmail(bandInfo);
   const contactPhone = getContactPhone(bandInfo);
   const socialLinks = getSocialLinks(bandInfo);
+  const contactSettings = getContactSettings(siteSettings);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -386,8 +389,8 @@ ${formData.message || 'No additional message provided'}`,
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Location</h4>
-                    <p className="text-gray-300">Based in Amsterdam</p>
-                    <p className="text-gray-400 text-sm">Performing throughout the Netherlands & Europe</p>
+                    <p className="text-gray-300">{contactSettings.baseLocation}</p>
+                    <p className="text-gray-400 text-sm">{contactSettings.serviceAreas}</p>
                   </div>
                 </div>
               </div>
@@ -397,14 +400,18 @@ ${formData.message || 'No additional message provided'}`,
             <motion.div variants={fadeInUp} className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700">
               <h4 className="font-semibold text-white mb-4">Pricing Guide</h4>
               <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Acoustic Sessions</span>
-                  <span className="text-yellow-400 font-semibold">€2,500 - €5,000</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Full Band Shows</span>
-                  <span className="text-red-400 font-semibold">€7,500 - €15,000</span>
-                </div>
+                {contactSettings.pricingGuide.map((pricing, index) => (
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-gray-300">{pricing.service}</span>
+                    <span className={`font-semibold ${
+                      pricing.service.toLowerCase().includes('acoustic') 
+                        ? 'text-yellow-400' 
+                        : 'text-red-400'
+                    }`}>
+                      {pricing.priceRange}
+                    </span>
+                  </div>
+                ))}
                 <div className="text-xs text-gray-400 mt-4">
                   * Prices vary based on venue size, duration, travel distance, and production requirements
                 </div>
@@ -413,7 +420,7 @@ ${formData.message || 'No additional message provided'}`,
 
             {/* Social Media */}
             <motion.div variants={fadeInUp}>
-              <h4 className="font-semibold text-white mb-4">Follow Our Journey</h4>
+              <h4 className="font-semibold text-white mb-4">{contactSettings.socialFollowText}</h4>
               <div className="flex space-x-4">
                 <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">

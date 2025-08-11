@@ -441,6 +441,147 @@ export default buildConfig({
       ],
     },
 
+    // Performance Types collection - replaces hardcoded performance data
+    {
+      slug: 'performance-types',
+      access: {
+        read: () => true, // Allow public read access for frontend
+      },
+      admin: {
+        useAsTitle: 'name',
+        group: 'Content',
+        description: 'Manage different performance types (Full Band, Acoustic, etc.)',
+        defaultColumns: ['name', 'slug', 'colorTheme'],
+      },
+      fields: [
+        {
+          name: 'name',
+          type: 'text',
+          required: true,
+          admin: {
+            description: 'e.g., "Full Band Experience", "Acoustic Sessions"',
+          },
+        },
+        {
+          name: 'slug',
+          type: 'text',
+          required: true,
+          unique: true,
+          admin: {
+            description: 'URL-friendly identifier (e.g., "full-band", "acoustic")',
+          },
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+          required: true,
+          admin: {
+            description: 'Main description of this performance type',
+          },
+        },
+        {
+          name: 'idealFor',
+          type: 'array',
+          label: 'Ideal For',
+          fields: [
+            {
+              name: 'item',
+              type: 'text',
+              required: true,
+            },
+          ],
+          admin: {
+            description: 'List of venues/events this performance type is ideal for',
+          },
+        },
+        {
+          name: 'features',
+          type: 'array',
+          label: 'Features',
+          fields: [
+            {
+              name: 'feature',
+              type: 'text',
+              required: true,
+            },
+          ],
+          admin: {
+            description: 'Key features of this performance type',
+          },
+        },
+        {
+          name: 'songList',
+          type: 'array',
+          label: 'Featured Songs',
+          fields: [
+            {
+              name: 'song',
+              type: 'text',
+              required: true,
+            },
+          ],
+          admin: {
+            description: 'Representative songs performed in this format',
+          },
+        },
+        {
+          name: 'heroImage',
+          type: 'upload',
+          relationTo: 'media',
+          label: 'Hero Image',
+          admin: {
+            description: 'Main image representing this performance type',
+          },
+        },
+        {
+          name: 'imageTitle',
+          type: 'text',
+          admin: {
+            description: 'Title overlay on the image',
+          },
+        },
+        {
+          name: 'imageDescription',
+          type: 'text',
+          admin: {
+            description: 'Description overlay on the image',
+          },
+        },
+        {
+          name: 'colorTheme',
+          type: 'select',
+          options: [
+            {
+              label: 'Red Theme',
+              value: 'red',
+            },
+            {
+              label: 'Yellow Theme', 
+              value: 'yellow',
+            },
+          ],
+          defaultValue: 'red',
+          required: true,
+        },
+        {
+          name: 'layoutReverse',
+          type: 'checkbox',
+          label: 'Reverse Layout',
+          admin: {
+            description: 'Swap image and content positions',
+          },
+        },
+        {
+          name: 'displayOrder',
+          type: 'number',
+          defaultValue: 0,
+          admin: {
+            description: 'Order of appearance (lower numbers first)',
+          },
+        },
+      ],
+    },
+
     // Media collection for uploads
     {
       slug: 'media',
@@ -522,6 +663,200 @@ export default buildConfig({
 
   // Global settings
   globals: [
+    // Site Settings - Complete site content management
+    {
+      slug: 'site-settings',
+      access: {
+        read: () => true, // Allow public read access for frontend
+      },
+      admin: {
+        group: 'Settings',
+        description: 'Manage all site-wide content including hero images, about section, pricing, and location info',
+      },
+      fields: [
+        {
+          name: 'general',
+          type: 'group',
+          label: 'General Site Settings',
+          fields: [
+            {
+              name: 'siteName',
+              type: 'text',
+              defaultValue: 'The Dutch Queen',
+              required: true,
+            },
+            {
+              name: 'tagline',
+              type: 'text',
+              defaultValue: 'Premium Queen tribute band from the Netherlands',
+            },
+            {
+              name: 'metaDescription',
+              type: 'textarea',
+              defaultValue: 'The Dutch Queen - Premium Queen tribute band from the Netherlands. Book us for your event!',
+            },
+          ],
+        },
+        {
+          name: 'heroSection',
+          type: 'group',
+          label: 'Hero Section Content',
+          fields: [
+            {
+              name: 'acousticImage',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'Acoustic Performance Image',
+              admin: {
+                description: 'Left side image for the hero compare slider',
+              },
+            },
+            {
+              name: 'fullBandImage', 
+              type: 'upload',
+              relationTo: 'media',
+              label: 'Full Band Performance Image',
+              admin: {
+                description: 'Right side image for the hero compare slider',
+              },
+            },
+            {
+              name: 'heroTitle',
+              type: 'text',
+              defaultValue: 'Experience Queen Like Never Before',
+            },
+            {
+              name: 'heroSubtitle',
+              type: 'text',
+              defaultValue: 'From intimate acoustic sessions to full stadium productions',
+            },
+          ],
+        },
+        {
+          name: 'aboutSection',
+          type: 'group', 
+          label: 'About Section Content',
+          fields: [
+            {
+              name: 'mainHeading',
+              type: 'text',
+              defaultValue: 'About The Dutch Queen',
+              required: true,
+            },
+            {
+              name: 'introText',
+              type: 'textarea',
+              defaultValue: 'From the heart of the Netherlands comes a tribute to the greatest rock band of all time. We don\'t just play Queen\'s music - we live it, breathe it, and share it with the world.',
+            },
+            {
+              name: 'storyHeading',
+              type: 'text',
+              defaultValue: 'Our Story',
+            },
+            {
+              name: 'storyContent',
+              type: 'richText',
+              defaultValue: [
+                {
+                  children: [
+                    {
+                      text: 'Born from a shared passion for Queen\'s timeless music, The Dutch Queen has been captivating audiences across the Netherlands and beyond since our formation. We understand that Queen\'s music deserves nothing less than perfection.'
+                    }
+                  ]
+                }
+              ],
+            },
+            {
+              name: 'storyImage',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'About Section Image',
+            },
+            {
+              name: 'stats',
+              type: 'array',
+              label: 'Band Statistics',
+              fields: [
+                {
+                  name: 'label',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'value',
+                  type: 'text', 
+                  required: true,
+                },
+                {
+                  name: 'icon',
+                  type: 'text',
+                  admin: {
+                    description: 'SVG icon name or emoji',
+                  },
+                },
+              ],
+              defaultValue: [
+                { label: 'Years Active', value: '5+', icon: '🎸' },
+                { label: 'Shows Performed', value: '150+', icon: '🎤' },
+                { label: 'Happy Clients', value: '100+', icon: '⭐' },
+                { label: 'Countries', value: '3', icon: '🌍' },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'contactSection',
+          type: 'group',
+          label: 'Contact Section Content',
+          fields: [
+            {
+              name: 'pricingGuide',
+              type: 'array',
+              label: 'Pricing Guide',
+              fields: [
+                {
+                  name: 'service',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'priceRange',
+                  type: 'text',
+                  required: true,
+                },
+              ],
+              defaultValue: [
+                { service: 'Acoustic Sessions', priceRange: '€2,500 - €5,000' },
+                { service: 'Full Band Shows', priceRange: '€7,500 - €15,000' },
+              ],
+            },
+            {
+              name: 'locationInfo',
+              type: 'group',
+              label: 'Location Information',
+              fields: [
+                {
+                  name: 'baseLocation',
+                  type: 'text',
+                  defaultValue: 'Based in Amsterdam',
+                },
+                {
+                  name: 'serviceAreas',
+                  type: 'text', 
+                  defaultValue: 'Performing throughout the Netherlands & Europe',
+                },
+              ],
+            },
+            {
+              name: 'socialFollowText',
+              type: 'text',
+              defaultValue: 'Follow Our Journey',
+            },
+          ],
+        },
+      ],
+    },
+
     {
       slug: 'band-info',
       access: {

@@ -1,33 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PerformanceCard } from "./performances/PerformanceCard";
-import { performanceData, tabConfig } from "@/data/performanceData";
-import { usePerformanceMedia } from "@/hooks/usePerformanceMedia";
+import { usePerformanceTypes, transformPerformanceTypeForComponent } from "@/hooks/usePerformanceTypes";
 
 /**
- * Refactored Performances Section Component
+ * CMS-Driven Performances Section Component
  * 
- * IMPROVEMENTS:
- * - Extracted data into separate configuration file
- * - Created reusable PerformanceCard component
- * - Reduced code duplication by ~60%
- * - Improved maintainability through separation of concerns
- * - Enhanced type safety with TypeScript interfaces
- * - Simplified state management logic
+ * FEATURES:
+ * - Dynamic performance types from Payload CMS
+ * - Fully manageable content through admin interface
+ * - Loading states and error handling
+ * - Fallback system for missing data
+ * - Maintains all original animations and styling
  */
 export function PerformancesSectionRefactored() {
-  const [activeTab, setActiveTab] = useState<"full-band" | "acoustic">("full-band");
-  const { fullBandImage, acousticImage, loading: mediaLoading } = usePerformanceMedia();
+  const [activeTab, setActiveTab] = useState<string>("full-band");
+  const { performanceTypes, loading, error } = usePerformanceTypes();
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-  const currentPerformance = performanceData[activeTab];
-  const currentMedia = activeTab === "full-band" ? fullBandImage : acousticImage;
+  // Update active tab when performance types load
+  useEffect(() => {
+    if (performanceTypes.length > 0 && !performanceTypes.find(p => p.slug === activeTab)) {
+      setActiveTab(performanceTypes[0].slug);
+    }
+  }, [performanceTypes, activeTab]);
+
+  // Loading state
+  if (loading) {
+    return (
+      <section id="performances" className="py-24 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-400 mb-4"></div>
+            <p className="text-gray-400">Loading performance types...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Error state
+  if (error || performanceTypes.length === 0) {
+    return (
+      <section id="performances" className="py-24 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <p className="text-red-400 mb-4">{error || 'No performance types available'}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const currentPerformance = performanceTypes.find(p => p.slug === activeTab) || performanceTypes[0];
+  const transformedPerformance = transformPerformanceTypeForComponent(currentPerformance);
 
   return (
     <section id="performances" className="py-24 bg-black">
@@ -57,36 +95,49 @@ export function PerformancesSectionRefactored() {
           className="flex justify-center mb-12"
         >
           <div className="bg-gray-900 rounded-full p-2 border border-gray-700">
-            {tabConfig.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeTab === tab.id ? tab.activeClasses : tab.inactiveClasses
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+            {performanceTypes.map((performanceType) => {
+              const isActive = activeTab === performanceType.slug;
+              const colorClasses = performanceType.colorTheme === 'red' 
+                ? {
+                    active: 'bg-red-600 text-white shadow-lg shadow-red-600/25',
+                    inactive: 'text-gray-300 hover:text-red-400 hover:bg-red-900/20'
+                  }
+                : {
+                    active: 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/25', 
+                    inactive: 'text-gray-300 hover:text-yellow-400 hover:bg-yellow-900/20'
+                  };
+              
+              return (
+                <button
+                  key={performanceType.slug}
+                  onClick={() => setActiveTab(performanceType.slug)}
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+                    isActive ? colorClasses.active : colorClasses.inactive
+                  }`}
+                >
+                  {performanceType.name}
+                </button>
+              );
+            })}
           </div>
         </motion.div>
 
         {/* Performance Content */}
         <div className="relative">
           <PerformanceCard
-            title={currentPerformance.title}
-            description={currentPerformance.description}
-            idealFor={currentPerformance.idealFor}
-            features={currentPerformance.features}
-            songs={currentPerformance.songs}
-            imageUrl={currentPerformance.imageUrl}
-            imageMedia={currentMedia}
-            imageAlt={currentPerformance.imageAlt}
-            imageTitle={currentPerformance.imageTitle}
-            imageDescription={currentPerformance.imageDescription}
-            colorTheme={currentPerformance.colorTheme}
-            layoutReverse={currentPerformance.layoutReverse}
-            isLoadingMedia={mediaLoading}
+            title={transformedPerformance.title}
+            description={transformedPerformance.description}
+            idealFor={transformedPerformance.idealFor}
+            features={transformedPerformance.features}
+            songs={transformedPerformance.songs}
+            imageUrl={transformedPerformance.imageUrl}
+            imageMedia={transformedPerformance.imageMedia}
+            imageAlt={transformedPerformance.imageAlt}
+            imageTitle={transformedPerformance.imageTitle}
+            imageDescription={transformedPerformance.imageDescription}
+            colorTheme={transformedPerformance.colorTheme}
+            layoutReverse={transformedPerformance.layoutReverse}
+            isLoadingMedia={false}
           />
         </div>
 
