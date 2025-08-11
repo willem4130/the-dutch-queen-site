@@ -746,7 +746,7 @@ export default buildConfig({
             {
               name: 'introText',
               type: 'textarea',
-              defaultValue: 'From the heart of the Netherlands comes a tribute to the greatest rock band of all time. We don\'t just play Queen\'s music - we live it, breathe it, and share it with the world.',
+              defaultValue: 'From the heart of the Netherlands comes a tribute to the greatest rock band of all time. We do not just play Queen music - we live it, breathe it, and share it with the world.',
             },
             {
               name: 'storyHeading',
@@ -760,7 +760,7 @@ export default buildConfig({
                 {
                   children: [
                     {
-                      text: 'Born from a shared passion for Queen\'s timeless music, The Dutch Queen has been captivating audiences across the Netherlands and beyond since our formation. We understand that Queen\'s music deserves nothing less than perfection.'
+                      text: 'Born from a shared passion for Queen timeless music, The Dutch Queen has been captivating audiences across the Netherlands and beyond since our formation. We understand that Queen music deserves nothing less than perfection.'
                     }
                   ]
                 }
