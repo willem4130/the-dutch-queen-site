@@ -668,6 +668,9 @@ export default buildConfig({
       slug: 'site-settings',
       access: {
         read: () => true, // Allow public read access for frontend
+        create: () => true, // Allow admin users to create/initialize settings
+        update: () => true, // Allow admin users to update settings
+        delete: () => true, // Allow admin users to delete if needed
       },
       admin: {
         group: 'Settings',
@@ -861,6 +864,9 @@ export default buildConfig({
       slug: 'band-info',
       access: {
         read: () => true, // Allow public read access for frontend
+        create: () => true, // Allow admin users to create/initialize settings
+        update: () => true, // Allow admin users to update settings
+        delete: () => true, // Allow admin users to delete if needed
       },
       admin: {
         group: 'Settings',

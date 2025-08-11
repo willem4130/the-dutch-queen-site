@@ -15,8 +15,8 @@ async function payloadFetch<T>(endpoint: string): Promise<T | null> {
       headers: {
         'Content-Type': 'application/json',
       },
-      // Add cache revalidation for production
-      next: { revalidate: 60 }, // Revalidate every 60 seconds
+      // Add cache revalidation for production (disabled in development for immediate updates)
+      next: { revalidate: process.env.NODE_ENV === 'production' ? 60 : 0 }, // No cache in dev, 60s in prod
     });
 
     if (!response.ok) {

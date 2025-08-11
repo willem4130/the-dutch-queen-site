@@ -5,6 +5,7 @@ interface SiteSettingsHook {
   siteSettings: SiteSettings | null;
   loading: boolean;
   error: string | null;
+  refresh: () => void;
 }
 
 export function useSiteSettings(): SiteSettingsHook {
@@ -12,30 +13,35 @@ export function useSiteSettings(): SiteSettingsHook {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchSiteSettings = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const settings = await getSiteSettings();
-        setSiteSettings(settings);
-        
-      } catch (err) {
-        console.error('Error fetching site settings:', err);
-        setError('Failed to load site settings');
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchSiteSettings = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const settings = await getSiteSettings();
+      setSiteSettings(settings);
+      
+    } catch (err) {
+      console.error('Error fetching site settings:', err);
+      setError('Failed to load site settings');
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchSiteSettings();
   }, []);
+
+  const refresh = () => {
+    fetchSiteSettings();
+  };
 
   return {
     siteSettings,
     loading,
-    error
+    error,
+    refresh
   };
 }
 
