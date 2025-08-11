@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { PerformanceCard } from "./performances/PerformanceCard";
 import { performanceData, tabConfig } from "@/data/performanceData";
+import { usePerformanceMedia } from "@/hooks/usePerformanceMedia";
 
 /**
  * Refactored Performances Section Component
@@ -18,6 +19,7 @@ import { performanceData, tabConfig } from "@/data/performanceData";
  */
 export function PerformancesSectionRefactored() {
   const [activeTab, setActiveTab] = useState<"full-band" | "acoustic">("full-band");
+  const { fullBandImage, acousticImage, loading: mediaLoading } = usePerformanceMedia();
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -25,6 +27,7 @@ export function PerformancesSectionRefactored() {
   };
 
   const currentPerformance = performanceData[activeTab];
+  const currentMedia = activeTab === "full-band" ? fullBandImage : acousticImage;
 
   return (
     <section id="performances" className="py-24 bg-black">
@@ -77,11 +80,13 @@ export function PerformancesSectionRefactored() {
             features={currentPerformance.features}
             songs={currentPerformance.songs}
             imageUrl={currentPerformance.imageUrl}
+            imageMedia={currentMedia}
             imageAlt={currentPerformance.imageAlt}
             imageTitle={currentPerformance.imageTitle}
             imageDescription={currentPerformance.imageDescription}
             colorTheme={currentPerformance.colorTheme}
             layoutReverse={currentPerformance.layoutReverse}
+            isLoadingMedia={mediaLoading}
           />
         </div>
 

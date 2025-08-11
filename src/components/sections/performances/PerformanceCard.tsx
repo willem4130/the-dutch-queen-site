@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Media } from "../../../lib/payload-api";
+import { getPerformanceImageUrl } from "../../../hooks/usePerformanceMedia";
 
 interface PerformanceCardProps {
   title: string;
@@ -8,11 +10,13 @@ interface PerformanceCardProps {
   features: string[];
   songs: string[];
   imageUrl: string;
+  imageMedia?: Media;
   imageAlt: string;
   imageTitle: string;
   imageDescription: string;
   colorTheme: "red" | "yellow";
   layoutReverse?: boolean;
+  isLoadingMedia?: boolean;
 }
 
 /**
@@ -26,11 +30,13 @@ export const PerformanceCard: React.FC<PerformanceCardProps> = ({
   features,
   songs,
   imageUrl,
+  imageMedia,
   imageAlt,
   imageTitle,
   imageDescription,
   colorTheme,
   layoutReverse = false,
+  isLoadingMedia = false,
 }) => {
   const themeColors = {
     red: {
@@ -103,11 +109,17 @@ export const PerformanceCard: React.FC<PerformanceCardProps> = ({
       {/* Image Section */}
       <div className={`relative ${imageOrderClass}`}>
         <div className="relative overflow-hidden rounded-2xl">
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            className="w-full h-96 object-cover"
-          />
+          {isLoadingMedia ? (
+            <div className="w-full h-96 bg-gray-900/50 flex items-center justify-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+            </div>
+          ) : (
+            <img
+              src={getPerformanceImageUrl(imageMedia, imageUrl, 'hero')}
+              alt={imageMedia?.alt || imageAlt}
+              className="w-full h-96 object-cover"
+            />
+          )}
           <div className={`absolute inset-0 bg-gradient-to-t ${colors.gradient} to-transparent`} />
           <div className="absolute bottom-6 left-6 right-6">
             <h4 className="text-2xl font-bold text-white mb-2">{imageTitle}</h4>

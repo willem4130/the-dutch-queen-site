@@ -1,0 +1,136 @@
+/* Custom styles for The Dutch Queen CMS Admin Panel */
+
+:root {
+  --theme-bg: #1a1a1a;
+  --theme-text: #ffffff;
+  --theme-accent: #ff6b35; /* Dutch Queen orange */
+  --theme-accent-secondary: #ffd700; /* Queen gold */
+}
+
+/* Admin panel customizations */
+.payload-admin {
+  .nav__brand {
+    color: var(--theme-accent) !important;
+    font-weight: 700;
+    
+    &:before {
+      content: '👑 ';
+      margin-right: 0.5rem;
+    }
+  }
+
+  /* Collection group styling */
+  .nav__group-label {
+    color: var(--theme-accent-secondary) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  /* Dashboard welcome message */
+  .dashboard__welcome {
+    background: linear-gradient(135deg, var(--theme-accent), var(--theme-accent-secondary));
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    p {
+      margin: 0.5rem 0 0;
+      opacity: 0.9;
+    }
+  }
+
+  /* Custom button styles */
+  .btn--style-primary {
+    background: var(--theme-accent) !important;
+    border-color: var(--theme-accent) !important;
+    
+    &:hover {
+      background: var(--theme-accent-secondary) !important;
+      border-color: var(--theme-accent-secondary) !important;
+    }
+  }
+
+  /* Status badges */
+  .pill--style-success {
+    background: #10b981 !important;
+  }
+  
+  .pill--style-warning {
+    background: #f59e0b !important;
+  }
+  
+  .pill--style-error {
+    background: #ef4444 !important;
+  }
+}
+
+/* Media upload customizations */
+.upload__preview-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Form field customizations */
+.field-type-text,
+.field-type-email,
+.field-type-textarea,
+.field-type-select {
+  .field__input {
+    border-radius: 6px;
+    border: 2px solid #e5e7eb;
+    
+    &:focus {
+      border-color: var(--theme-accent);
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+  }
+}
+
+/* Rich text editor styling */
+.rich-text-lexical {
+  .editor-container {
+    border-radius: 6px;
+    border: 2px solid #e5e7eb;
+    
+    &.focused {
+      border-color: var(--theme-accent);
+    }
+  }
+}
+
+/* Collection list styling */
+.collection-list {
+  .table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table__cell--header {
+    background: var(--theme-accent);
+    color: white;
+    font-weight: 600;
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .payload-admin {
+    .dashboard__welcome {
+      padding: 1.5rem;
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

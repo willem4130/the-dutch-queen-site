@@ -1,3 +1,5 @@
+import { Media } from '../lib/payload-api';
+
 export interface PerformanceType {
   id: "full-band" | "acoustic";
   title: string;
@@ -5,7 +7,8 @@ export interface PerformanceType {
   idealFor: string[];
   features: string[];
   songs: string[];
-  imageUrl: string;
+  imageUrl?: string;
+  imageMedia?: Media; // Add media object for dynamic images
   imageAlt: string;
   imageTitle: string;
   imageDescription: string;

@@ -11,8 +11,7 @@ export function HeroSection() {
     setMounted(true);
   }, []);
   
-  // Test animation state
-  console.log("HeroSection rendering, mounted:", mounted);
+  // Remove console.log for production
   
   return (
     <section id="home" className="relative h-screen flex flex-col overflow-hidden">
