@@ -14,9 +14,11 @@ async function payloadFetch<T>(endpoint: string): Promise<T | null> {
     const response = await fetch(url, {
       headers: {
         'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
       },
       // Add cache revalidation for production (disabled in development for immediate updates)
       next: { revalidate: process.env.NODE_ENV === 'production' ? 60 : 0 }, // No cache in dev, 60s in prod
+      cache: 'no-store', // Force fresh data on every request in development
     });
 
     if (!response.ok) {
