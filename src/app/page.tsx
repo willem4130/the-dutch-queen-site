@@ -1,5 +1,5 @@
 import { HeroSectionMinimal } from "@/components/sections/hero-minimal";
-import { AboutSection } from "@/components/sections/about";
+import { AboutSectionMinimal } from "@/components/sections/about-minimal";
 import { PerformancesSection } from "@/components/sections/performances";
 import { MediaGallerySection } from "@/components/sections/gallery";
 import { ContactSection } from "@/components/sections/contact";
@@ -15,7 +15,7 @@ export default function Home() {
           <HeroSectionMinimal />
         </div>
         <div id="about">
-          <AboutSection />
+          <AboutSectionMinimal />
         </div>
         <div id="performances">
           <PerformancesSection />
