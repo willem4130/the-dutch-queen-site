@@ -31,17 +31,11 @@ export function HeroSectionMinimal() {
             } : {}}
             className="mb-6"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-3" 
+            <h1 className="text-5xl md:text-7xl font-bold text-yellow-500 mb-3" 
                 style={{ 
-                  fontFamily: 'Trajan Pro, Optima, system-ui, sans-serif',
-                  background: 'linear-gradient(135deg, #CD7F32 0%, #DAA520 30%, #B8860B 70%, #8B4513 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: '0 0 40px rgba(205, 127, 50, 0.4), 0 6px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9)',
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase' as const,
-                  fontWeight: '900'
+                  fontFamily: 'Inter, system-ui, sans-serif',
+                  letterSpacing: '-0.02em',
+                  fontWeight: '700'
                 }}>
               The Dutch Queen
             </h1>
