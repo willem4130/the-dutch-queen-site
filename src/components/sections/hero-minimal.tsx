@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Compare } from "@/components/ui/compare";
 
 export function HeroSectionMinimal() {
   const [mounted, setMounted] = useState(false);
@@ -36,7 +37,7 @@ export function HeroSectionMinimal() {
           </p>
         </motion.div>
         
-        {/* Hero image */}
+        {/* Hero image comparison slider */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={mounted ? { 
@@ -46,10 +47,20 @@ export function HeroSectionMinimal() {
           } : {}}
           className="mb-8 w-full max-w-4xl"
         >
-          <img
-            src="/full-band-performance.jpg"
-            alt="The Dutch Queen live performance"
-            className="w-full h-96 object-cover rounded-lg border border-gray-700"
+          {/* Comparison labels */}
+          <div className="flex justify-between mb-4 text-sm text-gray-400">
+            <span>← Acoustic Performance</span>
+            <span className="text-gray-500">Hover to compare</span>
+            <span>Full Band Performance →</span>
+          </div>
+          
+          <Compare
+            firstImage="/acoustic-performance.jpg"
+            secondImage="/full-band-performance.jpg"
+            firstImageClassName="object-cover object-center"
+            secondImageClassname="object-cover object-center"
+            className="w-full h-96 rounded-lg border border-gray-700"
+            slideMode="hover"
           />
         </motion.div>
         
