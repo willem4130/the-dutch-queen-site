@@ -51,6 +51,9 @@ export function Navigation() {
     { name: "About", href: "#about", id: "about" },
     { name: "Performances", href: "#performances", id: "performances" },
     { name: "Shows", href: "#shows", id: "shows" },
+    { name: "Gallery", href: "#gallery", id: "gallery" },
+    { name: "Testimonials", href: "#testimonials", id: "testimonials" },
+    { name: "Band", href: "#band-members", id: "band-members" },
     { name: "Contact", href: "#contact", id: "contact" },
     { name: "Project Summary", href: "/management-summary", id: "summary" },
   ];
@@ -89,8 +92,8 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl md:text-3xl font-bold transition-all duration-300 hover:scale-105" style={{ fontFamily: 'Cinzel, serif' }}>
-              <span className="bg-gradient-to-r from-royal-bronze via-royal-bronze-light to-queen-burgundy bg-clip-text text-transparent">
+            <h1 className="text-nav-brand transition-all duration-300 hover:scale-105">
+              <span className="text-gradient-royal">
                 THE DUTCH QUEEN
               </span>
             </h1>
@@ -104,12 +107,11 @@ export function Navigation() {
                 onClick={() => handleSmoothScroll(item.href)}
                 onKeyDown={(e) => handleKeyDown(e, item.href)}
                 className={cn(
-                  "relative font-medium text-lg px-6 py-3 rounded-xl group overflow-hidden transform hover:scale-105 hover:shadow-lg hover:shadow-royal-bronze/20 uppercase tracking-wider transition-all duration-500",
+                  "relative text-nav-primary px-6 py-3 rounded-xl group overflow-hidden transform hover:scale-105 hover:shadow-lg hover:shadow-royal-bronze/20 transition-all duration-500",
                   activeSection === item.id
                     ? "text-royal-bronze bg-royal-bronze/10"
                     : "text-white hover:text-royal-bronze"
                 )}
-                style={{ fontFamily: 'Oswald, sans-serif' }}
                 aria-label={`Navigate to ${item.name} section`}
                 tabIndex={0}
               >
@@ -133,9 +135,8 @@ export function Navigation() {
             <button
               onClick={() => handleSmoothScroll("#contact")}
               onKeyDown={(e) => handleKeyDown(e, "#contact")}
-              className="relative text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group overflow-hidden border uppercase"
+              className="relative text-button-primary text-white px-8 py-4 rounded-2xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl group overflow-hidden border"
               style={{ 
-                fontFamily: 'Inter, sans-serif',
                 background: 'linear-gradient(to right, oklch(0.72 0.08 35), oklch(0.45 0.25 25))',
                 borderColor: 'oklch(0.72 0.08 35 / 0.2)',
                 boxShadow: '0 25px 50px -12px oklch(0.72 0.08 35 / 0.4)'
@@ -188,12 +189,11 @@ export function Navigation() {
                     onClick={() => handleSmoothScroll(item.href)}
                     onKeyDown={(e) => handleKeyDown(e, item.href)}
                     className={cn(
-                      "w-full text-left py-3 px-4 rounded-lg transition-all duration-300 uppercase tracking-wider font-medium",
+                      "w-full text-left text-nav-primary py-3 px-4 rounded-lg transition-all duration-300",
                       activeSection === item.id
                         ? "text-royal-bronze bg-royal-bronze/10 border-l-4 border-royal-bronze"
                         : "text-white hover:text-royal-bronze hover:bg-royal-bronze/5"
                     )}
-                    style={{ fontFamily: 'Oswald, sans-serif' }}
                     aria-label={`Navigate to ${item.name} section`}
                   >
                     {item.name}
@@ -206,8 +206,7 @@ export function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
                   onClick={() => handleSmoothScroll("#contact")}
-                  className="w-full mt-4 bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white py-4 px-6 rounded-xl font-bold text-lg tracking-wide uppercase transition-all duration-300 transform hover:scale-105"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
+                  className="w-full mt-4 text-button-primary bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
                   aria-label="Book now - Navigate to contact section"
                 >
                   Book Now

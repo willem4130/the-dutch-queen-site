@@ -1,0 +1,486 @@
+/**
+ * THE DUTCH QUEEN - THEATRICAL STAGE EFFECTS
+ * 
+ * CSS animations and effects for royal, rock, and drag queen theatricality
+ * Optimized for performance with GPU acceleration and accessibility compliance
+ */
+
+/* ========================================
+   STAGE LIGHTING SYSTEM
+   ======================================== */
+
+:root {
+  /* Dynamic spotlight positioning */
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  --spotlight-size: 40%;
+  --spotlight-intensity: 0.8;
+  
+  /* Stage lighting colors (using existing color system) */
+  --stage-light-warm: oklch(var(--stage-amber));
+  --stage-light-cool: oklch(var(--stage-platinum-bright));
+  --stage-light-dramatic: oklch(var(--royal-purple));
+  
+  /* Performance timing variables */
+  --beat-duration: 0.5s;
+  --measure-duration: 2s;
+  --phrase-duration: 8s;
+}
+
+/* Main spotlight effect */
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at var(--spotlight-x) var(--spotlight-y),
+    transparent 0%,
+    transparent var(--spotlight-size),
+    rgba(0, 0, 0, var(--spotlight-intensity)) 70%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.5, 0, 0.5, 1);
+  will-change: opacity;
+}
+
+.spotlight-overlay.active {
+  opacity: 1;
+}
+
+/* Stage fog effect */
+.stage-fog {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(var(--stage-platinum-rgb), 0.1) 30%,
+    rgba(var(--stage-platinum-rgb), 0.2) 60%,
+    rgba(var(--stage-platinum-rgb), 0.3) 100%
+  );
+  filter: blur(40px);
+  animation: fog-drift var(--phrase-duration) ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes fog-drift {
+  0%, 100% { 
+    transform: translateX(-3%) scaleX(1.1) scaleY(0.9); 
+    opacity: 0.4;
+  }
+  25% { 
+    transform: translateX(2%) scaleX(0.9) scaleY(1.1); 
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateX(3%) scaleX(1.05) scaleY(0.95); 
+    opacity: 0.7;
+  }
+  75% { 
+    transform: translateX(-1%) scaleX(0.95) scaleY(1.05); 
+    opacity: 0.5;
+  }
+}
+
+/* ========================================
+   CROWN AND METALLIC EFFECTS
+   ======================================== */
+
+.crown-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.crown-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(var(--crown-gold-shimmer-rgb), 0.8) 50%,
+    transparent 65%
+  );
+  animation: shimmer-sweep 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer-sweep {
+  0% { 
+    left: -100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Metallic button shine effect */
+.metallic-shine {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--royal-bronze) 0%,
+    var(--crown-gold) 50%,
+    var(--royal-bronze-light) 100%
+  );
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.metallic-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.metallic-shine:hover::before {
+  left: 100%;
+}
+
+.metallic-shine:hover {
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 
+    0 8px 25px rgba(212, 175, 55, 0.3),
+    0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+/* ========================================
+   PEARL AND ELEGANCE EFFECTS
+   ======================================== */
+
+.pearl-cascade {
+  position: relative;
+  overflow: hidden;
+}
+
+.pearl {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(
+    circle,
+    var(--pearl-shimmer) 0%,
+    var(--pearl-white) 40%,
+    var(--pearl-cream) 100%
+  );
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+  animation: pearl-fall 4s ease-in infinite;
+  opacity: 0;
+}
+
+@keyframes pearl-fall {
+  0% {
+    transform: translateY(-20px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(300px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Elegant floating animation */
+.elegant-float {
+  animation: elegant-float 6s ease-in-out infinite;
+}
+
+@keyframes elegant-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+}
+
+/* ========================================
+   STAGE LIGHTING SEQUENCES
+   ======================================== */
+
+.stage-lights-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-light {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--stage-amber);
+  opacity: 0.3;
+  filter: blur(2px);
+  animation: stage-light-sequence var(--measure-duration) ease-in-out infinite;
+}
+
+.stage-light:nth-child(1) { 
+  top: 10%; 
+  left: 15%; 
+  animation-delay: 0s;
+  background: var(--stage-amber);
+}
+
+.stage-light:nth-child(2) { 
+  top: 15%; 
+  left: 50%; 
+  animation-delay: calc(var(--beat-duration) * 0.5);
+  background: var(--royal-purple);
+}
+
+.stage-light:nth-child(3) { 
+  top: 20%; 
+  left: 85%; 
+  animation-delay: calc(var(--beat-duration) * 1);
+  background: var(--stage-platinum-bright);
+}
+
+.stage-light:nth-child(4) { 
+  top: 40%; 
+  left: 25%; 
+  animation-delay: calc(var(--beat-duration) * 1.5);
+  background: var(--crown-gold);
+}
+
+.stage-light:nth-child(5) { 
+  top: 45%; 
+  left: 75%; 
+  animation-delay: calc(var(--beat-duration) * 2);
+  background: var(--stage-amber-deep);
+}
+
+@keyframes stage-light-sequence {
+  0%, 85% {
+    opacity: 0.3;
+    transform: scale(1);
+    filter: blur(2px);
+  }
+  5%, 15% {
+    opacity: 1;
+    transform: scale(1.5);
+    filter: blur(0px);
+  }
+  20% {
+    opacity: 0.7;
+    transform: scale(1.2);
+    filter: blur(1px);
+  }
+}
+
+/* ========================================
+   CURTAIN EFFECTS
+   ======================================== */
+
+.theatrical-curtain {
+  position: relative;
+  overflow: hidden;
+}
+
+.theatrical-curtain::before,
+.theatrical-curtain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--velvet-burgundy) 0%,
+    var(--queen-burgundy-dark) 50%,
+    var(--velvet-shadow) 100%
+  );
+  transition: transform 2.5s cubic-bezier(0.25, 0, 0.35, 1);
+  z-index: 10;
+  border: 1px solid var(--royal-bronze);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.theatrical-curtain::before {
+  left: 0;
+  transform-origin: left center;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 20%,
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.theatrical-curtain::after {
+  right: 0;
+  transform-origin: right center;
+  background-image: linear-gradient(
+    -90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 20%,
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.theatrical-curtain.revealed::before {
+  transform: translateX(-100%);
+}
+
+.theatrical-curtain.revealed::after {
+  transform: translateX(100%);
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* GPU acceleration for smooth animations */
+.stage-fog,
+.crown-shimmer,
+.elegant-float,
+.stage-light,
+.pearl {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .stage-fog,
+  .crown-shimmer::before,
+  .elegant-float,
+  .stage-light,
+  .pearl {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .spotlight-overlay {
+    transition: opacity 0.2s ease !important;
+  }
+  
+  .theatrical-curtain::before,
+  .theatrical-curtain::after {
+    transition: transform 0.3s ease !important;
+  }
+  
+  .metallic-shine {
+    transition: transform 0.2s ease !important;
+  }
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Simplified effects for mobile performance */
+  .stage-fog {
+    filter: blur(20px);
+    opacity: 0.3;
+  }
+  
+  .stage-light {
+    width: 12px;
+    height: 12px;
+    filter: blur(1px);
+  }
+  
+  .pearl {
+    width: 4px;
+    height: 4px;
+  }
+  
+  /* Reduce animation complexity */
+  .crown-shimmer::before {
+    animation-duration: 2s;
+  }
+  
+  .elegant-float {
+    animation-duration: 4s;
+  }
+  
+  /* Disable heavy effects on very small screens */
+  @media (max-width: 480px) {
+    .stage-fog {
+      display: none;
+    }
+    
+    .spotlight-overlay {
+      background: rgba(0, 0, 0, 0.3);
+      background-image: none;
+    }
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.theatrical-entrance {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.theatrical-entrance.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.royal-glow {
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dramatic-shadow {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(212, 175, 55, 0.2);
+}
+
+.stage-ready {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}

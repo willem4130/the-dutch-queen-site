@@ -34,7 +34,7 @@ export function PerformancesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">Performances</span>
+            Our <span className="bg-gradient-to-r from-royal-bronze to-queen-burgundy bg-clip-text text-transparent">Performances</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Choose the perfect Queen experience for your event - from electrifying stadium energy to intimate acoustic magic
@@ -260,7 +260,7 @@ export function PerformancesSection() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center bg-gradient-to-r from-yellow-400 to-red-600 text-black px-8 py-3 rounded-full font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-200 transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white px-8 py-3 rounded-full font-semibold hover:from-royal-bronze-dark hover:to-queen-burgundy-dark transition-all duration-200 transform hover:scale-105"
             >
               Book Your Performance
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

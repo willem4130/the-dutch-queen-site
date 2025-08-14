@@ -55,7 +55,7 @@ export function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Book <span className="bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">The Dutch Queen</span>
+            Book <span className="bg-gradient-to-r from-royal-bronze to-queen-burgundy bg-clip-text text-transparent">The Dutch Queen</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to bring the magic of Queen to your event? Get in touch with us for a custom quote 
@@ -232,7 +232,7 @@ export function ContactSection() {
                 <motion.div variants={fadeInUp}>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-yellow-400 to-red-600 text-black py-4 rounded-lg font-semibold hover:from-yellow-300 hover:to-red-500 transition-all duration-200 transform hover:scale-[1.02]"
+                    className="w-full bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white py-4 rounded-lg font-semibold hover:from-royal-bronze-dark hover:to-queen-burgundy-dark transition-all duration-200 transform hover:scale-[1.02]"
                   >
                     Send Booking Inquiry
                   </button>
@@ -253,7 +253,7 @@ export function ContactSection() {
               <h3 className="text-2xl font-bold mb-6 text-yellow-400">Get in Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-royal-bronze to-queen-burgundy rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -266,7 +266,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-royal-bronze to-queen-burgundy rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -279,7 +279,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-royal-bronze to-queen-burgundy rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />

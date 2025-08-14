@@ -1,8 +1,15 @@
-/* Optimized font loading with timeout protection */
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Oswald:wght@400;500;600&family=Source+Sans+Pro:wght@400;600&family=Inter:wght@500;700&display=swap")
-layer(fonts);
+/* ========================================
+   ENHANCED TYPOGRAPHY SYSTEM - GOOGLE FONTS LOADING
+   Optimized for The Dutch Queen royal theatrical branding
+   ======================================== */
+
+/* Performance-optimized font loading with expanded weights */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap") layer(fonts);
 @import "tailwindcss";
 @import "tw-animate-css";
+
+/* Import theatrical animation effects */
+@import '../styles/theatrical-effects.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -80,35 +87,190 @@ layer(fonts);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Royal Bronze Color Palette - Cooler & More Sophisticated */
-  --royal-bronze: oklch(0.72 0.08 35); /* Cool bronze main color (less orange) */
-  --royal-bronze-dark: oklch(0.58 0.12 30); /* Deeper bronze for hierarchy */
-  --royal-bronze-light: oklch(0.82 0.06 40); /* Light bronze for backgrounds */
+  /* ========================================
+     ENHANCED THEATRICAL COLOR SYSTEM
+     Building on existing royal bronze & burgundy foundation
+     ======================================== */
 
-  /* Rock Edge Colors - Refined Burgundy */
-  --queen-burgundy: oklch(0.45 0.25 25); /* Deep burgundy (not bright red) */
-  --queen-burgundy-dark: oklch(0.35 0.28 20); /* Darker burgundy for depth */
+  /* ROYAL BRONZE FAMILY - Expanded Metallic Range */
+  --royal-bronze: oklch(0.72 0.08 35); /* Foundation bronze (existing) */
+  --royal-bronze-dark: oklch(0.58 0.12 30); /* Deep bronze (existing) */
+  --royal-bronze-light: oklch(0.82 0.06 40); /* Light bronze (existing) */
+  
+  /* Crown Gold - Premium metallic highlights */
+  --crown-gold: oklch(0.85 0.12 50); /* Bright crown gold */
+  --crown-gold-shimmer: oklch(0.90 0.10 55); /* Lighter shimmer effect */
+  --crown-gold-deep: oklch(0.68 0.15 45); /* Deep gold for shadows */
 
-  /* Metallic Luxury Accents - Cooler Tones */
-  --accent-steel: oklch(0.65 0.04 220); /* Cool steel accent */
-  --accent-bronze: oklch(0.58 0.08 35); /* Refined bronze for details */
-  --accent-platinum: oklch(0.75 0.02 180); /* Cool metallic contrast */
+  /* BURGUNDY FAMILY - Velvet & Drama */
+  --queen-burgundy: oklch(0.45 0.25 25); /* Foundation burgundy (existing) */
+  --queen-burgundy-dark: oklch(0.35 0.28 20); /* Deep burgundy (existing) */
+  
+  /* Velvet Depths - Drag queen luxury aesthetics */
+  --velvet-burgundy: oklch(0.38 0.30 22); /* Rich velvet texture */
+  --velvet-wine: oklch(0.42 0.28 28); /* Wine velvet highlight */
+  --velvet-shadow: oklch(0.25 0.25 18); /* Deep velvet shadow */
 
-  /* Layered Background System */
-  --deep-black: oklch(0.05 0 0); /* True deep black */
-  --rich-black: oklch(0.08 0.02 20); /* Slightly warm black */
-  --charcoal: oklch(0.15 0.01 15); /* Lighter charcoal */
-  --midnight: oklch(0.12 0.03 30); /* Midnight with hint of warmth */
+  /* PREMIUM METALLICS - Stage & Performance */
+  --stage-platinum: oklch(0.82 0.02 200); /* Cool stage platinum */
+  --stage-platinum-bright: oklch(0.88 0.01 180); /* Bright stage lights */
+  --stage-platinum-shadow: oklch(0.65 0.03 210); /* Platinum shadows */
+  
+  --rock-steel: oklch(0.58 0.05 230); /* Rock-inspired steel */
+  --rock-steel-bright: oklch(0.70 0.04 225); /* Bright steel accents */
+  --rock-steel-dark: oklch(0.45 0.06 235); /* Dark steel depth */
+
+  /* PEARL HIGHLIGHTS - Drag queen shimmer */
+  --pearl-white: oklch(0.96 0.02 90); /* Soft pearl highlight */
+  --pearl-cream: oklch(0.92 0.04 80); /* Creamy pearl accent */
+  --pearl-shimmer: oklch(0.94 0.03 85); /* Subtle shimmer effect */
+
+  /* THEATRICAL LIGHTING - Stage colors */
+  --spotlight-white: oklch(0.98 0.01 60); /* Pure spotlight white */
+  --stage-amber: oklch(0.75 0.15 70); /* Warm stage amber */
+  --stage-amber-deep: oklch(0.62 0.18 65); /* Deep amber shadows */
+  --royal-purple: oklch(0.48 0.25 310); /* Enhanced royal purple */
+  --royal-purple-deep: oklch(0.35 0.30 305); /* Deep royal purple */
+
+  /* BACKGROUND SYSTEM - Professional stage gradients */
+  --deep-black: oklch(0.05 0 0); /* True deep black (existing) */
+  --rich-black: oklch(0.08 0.02 20); /* Slightly warm black (existing) */
+  --charcoal-stage: oklch(0.18 0.01 15); /* Stage charcoal */
+  --charcoal-soft: oklch(0.22 0.01 20); /* Soft charcoal transition */
+  --midnight-velvet: oklch(0.12 0.03 30); /* Velvet midnight */
+  --backstage-dark: oklch(0.15 0.02 25); /* Backstage atmosphere */
+
+  /* ACCESSIBILITY COMPLIANT TEXT COLORS */
+  /* All combinations tested for WCAG 2.1 AA compliance */
+  --text-on-dark: oklch(0.95 0.02 85); /* High contrast on dark backgrounds */
+  --text-on-bronze: oklch(0.15 0.02 30); /* Dark text on bronze */
+  --text-on-burgundy: oklch(0.92 0.03 80); /* Light text on burgundy */
+  --text-muted-light: oklch(0.75 0.02 40); /* Muted text on dark */
+  --text-muted-dark: oklch(0.45 0.03 35); /* Muted text on light */
+
+  /* METALLIC SHINE EFFECTS - CSS gradient ready */
+  --metallic-shine-bronze: linear-gradient(45deg, 
+    oklch(0.65 0.12 30) 0%, 
+    oklch(0.82 0.06 40) 30%, 
+    oklch(0.90 0.10 55) 50%, 
+    oklch(0.82 0.06 40) 70%, 
+    oklch(0.65 0.12 30) 100%);
+  
+  --metallic-shine-platinum: linear-gradient(45deg,
+    oklch(0.70 0.03 210) 0%,
+    oklch(0.82 0.02 200) 30%,
+    oklch(0.88 0.01 180) 50%,
+    oklch(0.82 0.02 200) 70%,
+    oklch(0.70 0.03 210) 100%);
+
+  /* INTERACTIVE STATES - Hover & focus effects */
+  --bronze-hover: oklch(0.78 0.10 38); /* Bronze hover state */
+  --burgundy-hover: oklch(0.52 0.28 28); /* Burgundy hover state */
+  --steel-hover: oklch(0.65 0.06 225); /* Steel hover state */
+  --focus-ring: oklch(0.75 0.15 50); /* Accessible focus ring */
 
   /* Legacy colors for compatibility */
   --warm-white: oklch(0.98 0.02 85);
   --stage-purple: oklch(0.4 0.2 300);
+  
+  /* Deprecated - use new system above */
+  --accent-steel: oklch(0.65 0.04 220);
+  --accent-bronze: oklch(0.58 0.08 35);
+  --accent-platinum: oklch(0.75 0.02 180);
+  --charcoal: oklch(0.15 0.01 15);
+  --midnight: oklch(0.12 0.03 30);
 
-  /* Font fallbacks for timeout protection */
+  /* ========================================
+     ENHANCED TYPOGRAPHY SYSTEM VARIABLES
+     Royal theatrical typography for The Dutch Queen
+     ======================================== */
+
+  /* FONT STACKS - Enhanced with fallbacks */
   --font-cinzel: "Cinzel", "Times New Roman", "Times", serif;
   --font-oswald: "Oswald", "Arial Black", "Helvetica Bold", sans-serif;
   --font-source: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
   --font-inter: "Inter", "Helvetica Neue", "Helvetica", sans-serif;
+  --font-playfair: "Playfair Display", "Georgia", "Times", serif;
+
+  /* RESPONSIVE TYPOGRAPHY SCALES - Mobile First with clamp() */
+  
+  /* DISPLAY SCALE - Dramatic headlines & hero sections */
+  --text-display-xl: clamp(3rem, 8vw, 8rem);        /* 48px -> 128px */
+  --text-display-lg: clamp(2.5rem, 6vw, 6rem);      /* 40px -> 96px */
+  --text-display-md: clamp(2rem, 5vw, 4.5rem);      /* 32px -> 72px */
+  --text-display-sm: clamp(1.75rem, 4vw, 3.5rem);   /* 28px -> 56px */
+
+  /* HEADING SCALE - Section headers & navigation */
+  --text-h1: clamp(2rem, 4vw, 3.5rem);              /* 32px -> 56px */
+  --text-h2: clamp(1.75rem, 3.5vw, 2.75rem);        /* 28px -> 44px */
+  --text-h3: clamp(1.5rem, 3vw, 2.25rem);           /* 24px -> 36px */
+  --text-h4: clamp(1.25rem, 2.5vw, 1.875rem);       /* 20px -> 30px */
+  --text-h5: clamp(1.125rem, 2vw, 1.5rem);          /* 18px -> 24px */
+  --text-h6: clamp(1rem, 1.5vw, 1.25rem);           /* 16px -> 20px */
+
+  /* BODY SCALE - Content & interface */
+  --text-xl: clamp(1.125rem, 1.5vw, 1.375rem);      /* 18px -> 22px */
+  --text-lg: clamp(1rem, 1.25vw, 1.125rem);         /* 16px -> 18px */
+  --text-base: clamp(0.875rem, 1vw, 1rem);          /* 14px -> 16px */
+  --text-sm: clamp(0.8125rem, 0.875vw, 0.875rem);   /* 13px -> 14px */
+  --text-xs: clamp(0.75rem, 0.75vw, 0.8125rem);     /* 12px -> 13px */
+
+  /* LINE HEIGHT SYSTEM - Optimized for readability */
+  --leading-display: 0.9;     /* Tight for dramatic headlines */
+  --leading-heading: 1.1;     /* Balanced for headers */
+  --leading-body: 1.6;        /* Comfortable for reading */
+  --leading-interface: 1.4;   /* Efficient for UI elements */
+
+  /* LETTER SPACING - Royal & theatrical character */
+  --tracking-tight: -0.025em;    /* Dramatic headlines */
+  --tracking-normal: 0em;        /* Standard text */
+  --tracking-wide: 0.025em;      /* Navigation */
+  --tracking-wider: 0.05em;      /* Buttons & labels */
+  --tracking-widest: 0.1em;      /* Theatrical emphasis */
+
+  /* FONT WEIGHT SCALE - From delicate to powerful */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  /* THEATRICAL TEXT EFFECTS - CSS Ready gradients */
+  --text-gradient-royal: linear-gradient(135deg, 
+    oklch(0.72 0.08 35) 0%,          /* royal bronze */
+    oklch(0.82 0.06 40) 30%,         /* light bronze */
+    oklch(0.85 0.12 50) 50%,         /* crown gold */
+    oklch(0.45 0.25 25) 100%);       /* queen burgundy */
+  
+  --text-gradient-metallic: linear-gradient(135deg,
+    oklch(0.82 0.02 200) 0%,         /* stage platinum */
+    oklch(0.88 0.01 180) 30%,        /* bright platinum */
+    oklch(0.85 0.12 50) 50%,         /* crown gold */
+    oklch(0.82 0.02 200) 100%);      /* stage platinum */
+
+  --text-gradient-dramatic: linear-gradient(135deg,
+    oklch(0.96 0.02 90) 0%,          /* pearl white */
+    oklch(0.85 0.12 50) 25%,         /* crown gold */
+    oklch(0.75 0.15 70) 50%,         /* stage amber */
+    oklch(0.45 0.25 25) 75%,         /* queen burgundy */
+    oklch(0.25 0.25 18) 100%);       /* velvet shadow */
+
+  /* TEXT SHADOW SYSTEM - Stage lighting effects */
+  --shadow-text-subtle: 0 1px 2px oklch(0.05 0 0 / 0.3);
+  --shadow-text-dramatic: 0 2px 8px oklch(0.05 0 0 / 0.6);
+  --shadow-text-stage: 0 4px 16px oklch(0.72 0.08 35 / 0.4);
+  --shadow-text-royal: 0 6px 24px oklch(0.45 0.25 25 / 0.5);
+
+  /* BACKDROP EFFECTS - For text overlays */
+  --backdrop-text-dark: oklch(0.05 0 0 / 0.8);
+  --backdrop-text-royal: linear-gradient(135deg, 
+    oklch(0.72 0.08 35 / 0.9) 0%, 
+    oklch(0.45 0.25 25 / 0.9) 100%);
+  --backdrop-text-metallic: linear-gradient(135deg,
+    oklch(0.82 0.02 200 / 0.9) 0%,
+    oklch(0.58 0.05 230 / 0.9) 100%);
 }
 
 .dark {
@@ -151,17 +313,282 @@ layer(fonts);
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: var(--font-source);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
   }
 
-  /* Typography System - Font families handled by Tailwind config */
+  /* ========================================
+     ENHANCED TYPOGRAPHY UTILITY CLASSES
+     Royal theatrical typography system
+     ======================================== */
 
-  /* Typography handled by Tailwind font family utilities */
+  /* DISPLAY TYPOGRAPHY - Hero & dramatic headlines */
+  .text-display-xl {
+    font-family: var(--font-cinzel);
+    font-size: var(--text-display-xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-tight);
+    text-shadow: var(--shadow-text-royal);
+  }
 
-  /* Royal Rock Component Animations */
+  .text-display-lg {
+    font-family: var(--font-cinzel);
+    font-size: var(--text-display-lg);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-tight);
+    text-shadow: var(--shadow-text-stage);
+  }
+
+  .text-display-md {
+    font-family: var(--font-cinzel);
+    font-size: var(--text-display-md);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-normal);
+    text-shadow: var(--shadow-text-dramatic);
+  }
+
+  .text-display-sm {
+    font-family: var(--font-cinzel);
+    font-size: var(--text-display-sm);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-normal);
+    text-shadow: var(--shadow-text-subtle);
+  }
+
+  /* SECTION HEADERS - Theatrical hierarchy */
+  .text-section-title {
+    font-family: var(--font-playfair);
+    font-size: var(--text-h1);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-normal);
+    text-shadow: var(--shadow-text-dramatic);
+  }
+
+  .text-section-subtitle {
+    font-family: var(--font-oswald);
+    font-size: var(--text-h2);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  /* NAVIGATION TYPOGRAPHY */
+  .text-nav-primary {
+    font-family: var(--font-oswald);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-interface);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+  }
+
+  .text-nav-brand {
+    font-family: var(--font-cinzel);
+    font-size: var(--text-h2);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  /* PERFORMANCE CONTENT */
+  .text-performance-title {
+    font-family: var(--font-playfair);
+    font-size: var(--text-h3);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  .text-performance-detail {
+    font-family: var(--font-oswald);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-interface);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  /* BODY CONTENT - Enhanced readability */
+  .text-content-primary {
+    font-family: var(--font-source);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-normal);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  .text-content-secondary {
+    font-family: var(--font-source);
+    font-size: var(--text-base);
+    font-weight: var(--weight-normal);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  .text-content-emphasis {
+    font-family: var(--font-source);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  /* INTERFACE ELEMENTS */
+  .text-button-primary {
+    font-family: var(--font-inter);
+    font-size: var(--text-base);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-interface);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+  }
+
+  .text-button-secondary {
+    font-family: var(--font-oswald);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-interface);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+  }
+
+  .text-label {
+    font-family: var(--font-inter);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-interface);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* THEATRICAL GRADIENT EFFECTS */
+  .text-gradient-royal {
+    background: var(--text-gradient-royal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  .text-gradient-metallic {
+    background: var(--text-gradient-metallic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .text-gradient-dramatic {
+    background: var(--text-gradient-dramatic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradient-shift 6s ease-in-out infinite;
+  }
+
+  /* RESPONSIVE HELPERS */
+  .text-responsive-hero {
+    font-size: var(--text-display-xl);
+    line-height: var(--leading-display);
+  }
+
+  .text-responsive-section {
+    font-size: var(--text-h1);
+    line-height: var(--leading-heading);
+  }
+
+  .text-responsive-content {
+    font-size: var(--text-lg);
+    line-height: var(--leading-body);
+  }
+
+  /* ANIMATION KEYFRAMES */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 50% 100%; }
+    75% { background-position: 0% 0%; }
+  }
+
   @keyframes spin {
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  /* CROWN SHIMMER ANIMATION - Royal brand elements */
+  @keyframes crown-shimmer {
+    0%, 100% { 
+      filter: brightness(1) drop-shadow(0 0 4px oklch(0.85 0.12 50 / 0.5)); 
+      transform: scale(1);
+    }
+    50% { 
+      filter: brightness(1.3) drop-shadow(0 0 8px oklch(0.85 0.12 50 / 0.8)); 
+      transform: scale(1.02);
+    }
+  }
+  
+  .animate-crown-shimmer {
+    animation: crown-shimmer 3s ease-in-out infinite;
+  }
+
+  /* STAGE LIGHTING ANIMATION - Performance visual effects */
+  @keyframes stage-spotlight {
+    0%, 100% { 
+      box-shadow: 0 0 20px oklch(0.98 0.01 60 / 0.3), 
+                  0 0 40px oklch(0.75 0.15 70 / 0.2); 
+    }
+    50% { 
+      box-shadow: 0 0 40px oklch(0.98 0.01 60 / 0.5), 
+                  0 0 80px oklch(0.75 0.15 70 / 0.4); 
+    }
+  }
+  
+  .animate-stage-spotlight {
+    animation: stage-spotlight 4s ease-in-out infinite;
+  }
+
+  /* METALLIC SHINE ANIMATION - Performance equipment effects */
+  @keyframes metallic-shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  .animate-metallic-shine {
+    background: linear-gradient(90deg, 
+      transparent, 
+      oklch(0.90 0.10 55 / 0.3) 50%, 
+      transparent);
+    background-size: 200% 100%;
+    animation: metallic-shine 3s ease-in-out infinite;
+  }
+
+  /* ACCESSIBILITY ENHANCEMENTS */
+  @media (prefers-reduced-motion: reduce) {
+    .text-gradient-royal,
+    .text-gradient-metallic,
+    .text-gradient-dramatic {
+      animation: none;
+    }
+  }
+
+  /* HIGH CONTRAST MODE SUPPORT */
+  @media (prefers-contrast: high) {
+    .text-gradient-royal,
+    .text-gradient-metallic,
+    .text-gradient-dramatic {
+      background: none;
+      -webkit-text-fill-color: currentColor;
+      color: oklch(0.85 0.12 50); /* crown gold for visibility */
     }
   }
 }
