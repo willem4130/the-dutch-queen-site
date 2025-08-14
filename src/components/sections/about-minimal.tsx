@@ -27,9 +27,19 @@ export function AboutSectionMinimal() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About The Dutch Queen
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Professional Queen tribute band delivering the full Queen experience with authentic sound, stunning visuals, and the theatrical energy that made Queen legendary.
           </p>
+          
+          {/* Action buttons moved from hero */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+              Check Availability
+            </button>
+            <button className="border border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+              Watch Videos
+            </button>
+          </div>
         </motion.div>
 
         {/* Main Content Grid */}

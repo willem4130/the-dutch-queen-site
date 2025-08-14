@@ -16,82 +16,62 @@ export function HeroSectionMinimal() {
       {/* Simple gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black" />
       
-      {/* Minimal hero content */}
-      <div className="relative z-10 flex flex-col justify-center items-center h-full px-4 text-center">
+      {/* Minimal hero content - restructured for full-width slider */}
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Top section with title and labels */}
+        <div className="flex-shrink-0 pt-20 pb-8 px-4 text-center">
         
-        {/* Simple logo/title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={mounted ? { 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.8, ease: "easeOut" }
-          } : {}}
-          className="mb-8"
-        >
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
-            The Dutch Queen
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-light">
-            Professional Queen Tribute Band
-          </p>
-        </motion.div>
-        
-        {/* Hero image comparison slider */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={mounted ? { 
-            opacity: 1, 
-            scale: 1,
-            transition: { duration: 1, delay: 0.2 }
-          } : {}}
-          className="mb-8 w-full max-w-4xl"
-        >
+          {/* Simple logo/title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={mounted ? { 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 0.8, ease: "easeOut" }
+            } : {}}
+            className="mb-6"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-3">
+              The Dutch Queen
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 font-light">
+              Professional Queen Tribute Band
+            </p>
+          </motion.div>
+          
           {/* Comparison labels */}
-          <div className="flex justify-between mb-4 text-sm text-gray-400">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={mounted ? { 
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.2 }
+            } : {}}
+            className="flex justify-between mb-4 text-sm text-gray-400 max-w-4xl mx-auto"
+          >
             <span>← Acoustic Performance</span>
             <span className="text-gray-500">Hover to compare</span>
             <span>Full Band Performance →</span>
-          </div>
-          
+          </motion.div>
+        </div>
+        
+        {/* Full-width comparison slider - takes up most of screen */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={mounted ? { 
+            opacity: 1, 
+            scale: 1,
+            transition: { duration: 1, delay: 0.3 }
+          } : {}}
+          className="flex-1 w-full px-4 pb-4"
+        >
           <Compare
             firstImage="/acoustic-performance.jpg"
             secondImage="/full-band-performance.jpg"
             firstImageClassName="object-cover object-center"
             secondImageClassname="object-cover object-center"
-            className="w-full h-96 rounded-lg border border-gray-700"
+            className="w-full h-full rounded-lg border border-gray-700"
             slideMode="hover"
           />
-        </motion.div>
-        
-        {/* Clear CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={mounted ? { 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.8, delay: 0.4 }
-          } : {}}
-          className="flex flex-col sm:flex-row gap-4"
-        >
-          <button className="bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
-            Check Availability
-          </button>
-          <button className="border border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-black font-bold py-4 px-8 rounded-lg text-lg transition-colors">
-            Watch Videos
-          </button>
-        </motion.div>
-        
-        {/* Key information */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={mounted ? { 
-            opacity: 1,
-            transition: { duration: 0.8, delay: 0.6 }
-          } : {}}
-          className="mt-8 text-gray-400"
-        >
-          <p>Professional performances • Corporate events • Private parties</p>
         </motion.div>
       </div>
 
