@@ -139,7 +139,7 @@ export function MediaGallerySection() {
           </h2>
           <p className="text-content-primary text-text-muted-light max-w-3xl mx-auto">
             Experience The Dutch Queen through our performance gallery. From intimate acoustic sessions 
-            to full stadium productions, witness the magic that makes us the Netherlands' premier Queen tribute.
+            to full stadium productions, witness the magic that makes us the Netherlands&apos; premier Queen tribute.
           </p>
         </motion.div>
 

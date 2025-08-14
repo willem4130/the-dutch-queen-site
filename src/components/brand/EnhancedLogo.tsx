@@ -22,7 +22,7 @@ interface EnhancedLogoProps {
   showTagline?: boolean;
 }
 
-export const EnhancedLogo: React.FC<EnhancedLogoProps> = ({
+const EnhancedLogo: React.FC<EnhancedLogoProps> = ({
   variant = 'full',
   size = 'md',
   theme = 'royal',
@@ -264,7 +264,7 @@ interface BrandIconProps {
   className?: string;
 }
 
-export const BrandIcon: React.FC<BrandIconProps> = ({
+const BrandIcon: React.FC<BrandIconProps> = ({
   icon,
   size = 'md',
   variant = 'filled',
@@ -356,7 +356,7 @@ interface BrandBadgeProps {
   className?: string;
 }
 
-export const BrandBadge: React.FC<BrandBadgeProps> = ({
+const BrandBadge: React.FC<BrandBadgeProps> = ({
   type = 'premium',
   size = 'md',
   style = 'ornate',

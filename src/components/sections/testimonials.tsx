@@ -217,7 +217,7 @@ export function TestimonialsSection() {
 
                   {/* Review Text */}
                   <blockquote className="text-content-primary text-pearl-white text-xl leading-relaxed mb-8 text-center italic max-w-4xl mx-auto">
-                    "{testimonial.review}"
+                    &ldquo;{testimonial.review}&rdquo;
                   </blockquote>
 
                   {/* Highlight */}

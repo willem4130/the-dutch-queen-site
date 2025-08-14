@@ -20,7 +20,7 @@ interface SpotlightProps {
   className?: string;
 }
 
-export const Spotlight: React.FC<SpotlightProps> = ({
+const Spotlight: React.FC<SpotlightProps> = ({
   intensity = 'medium',
   color = 'white',
   size = 'md',
@@ -72,7 +72,7 @@ interface StageCurtainProps {
   children?: React.ReactNode;
 }
 
-export const StageCurtain: React.FC<StageCurtainProps> = ({
+const StageCurtain: React.FC<StageCurtainProps> = ({
   state = 'open',
   style = 'velvet',
   className,
@@ -171,7 +171,7 @@ interface VintageAmplifierProps {
   className?: string;
 }
 
-export const VintageAmplifier: React.FC<VintageAmplifierProps> = ({
+const VintageAmplifier: React.FC<VintageAmplifierProps> = ({
   size = 'combo',
   brand = 'custom',
   className
@@ -266,7 +266,7 @@ interface StageLightingRigProps {
   className?: string;
 }
 
-export const StageLightingRig: React.FC<StageLightingRigProps> = ({
+const StageLightingRig: React.FC<StageLightingRigProps> = ({
   lights = 6,
   pattern = 'mixed',
   intensity = 'medium',
@@ -334,7 +334,7 @@ interface VinylRecordProps {
   className?: string;
 }
 
-export const VinylRecord: React.FC<VinylRecordProps> = ({
+const VinylRecord: React.FC<VinylRecordProps> = ({
   size = 'md',
   spinning = false,
   label = 'THE DUTCH QUEEN',
@@ -396,7 +396,7 @@ interface StageFogProps {
   className?: string;
 }
 
-export const StageFog: React.FC<StageFogProps> = ({
+const StageFog: React.FC<StageFogProps> = ({
   density = 'medium',
   color = 'white',
   direction = 'rising',

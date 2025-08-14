@@ -19,7 +19,7 @@ interface PerformerSilhouetteProps {
   animate?: boolean;
 }
 
-export const PerformerSilhouette: React.FC<PerformerSilhouetteProps> = ({
+const PerformerSilhouette: React.FC<PerformerSilhouetteProps> = ({
   pose = 'microphone',
   size = 'md',
   className,
@@ -184,7 +184,7 @@ interface GuitarPickProps {
   text?: string;
 }
 
-export const GuitarPick: React.FC<GuitarPickProps> = ({
+const GuitarPick: React.FC<GuitarPickProps> = ({
   design = 'classic',
   size = 'md',
   color = 'bronze',
@@ -310,7 +310,7 @@ interface SoundWaveProps {
   className?: string;
 }
 
-export const SoundWave: React.FC<SoundWaveProps> = ({
+const SoundWave: React.FC<SoundWaveProps> = ({
   pattern = 'equalizer',
   intensity = 'medium',
   color = 'gold',
@@ -353,22 +353,22 @@ export const SoundWave: React.FC<SoundWaveProps> = ({
         </defs>
         
         {Array.from({ length: bars }, (_, i) => {
-          const height = (20 + Math.sin(i * 0.5) * 15) * intensityMultipliers[intensity];
+          const height = Math.round((20 + Math.sin(i * 0.5) * 15) * intensityMultipliers[intensity] * 100) / 100;
           const x = (i * 10) + 5;
           
           return (
             <rect
               key={i}
               x={x}
-              y={60 - height}
+              y={Math.round((60 - height) * 100) / 100}
               width="6"
-              height={height}
+              height={Math.round(height * 100) / 100}
               fill={colors[color]}
               rx="3"
               className={animate ? 'animate-pulse' : ''}
               style={{
                 animationDelay: animate ? `${i * 0.1}s` : undefined,
-                animationDuration: animate ? `${1 + Math.random()}s` : undefined
+                animationDuration: animate ? `${1 + (i % 3) * 0.3}s` : undefined
               }}
             />
           );
@@ -379,8 +379,8 @@ export const SoundWave: React.FC<SoundWaveProps> = ({
 
   if (pattern === 'waveform') {
     const wavePoints = Array.from({ length: 50 }, (_, i) => {
-      const x = i * 2.4;
-      const y = 30 + Math.sin(i * 0.3) * 20 * intensityMultipliers[intensity];
+      const x = Math.round(i * 2.4 * 100) / 100;
+      const y = Math.round((30 + Math.sin(i * 0.3) * 20 * intensityMultipliers[intensity]) * 100) / 100;
       return `${x},${y}`;
     }).join(' ');
 
@@ -423,11 +423,11 @@ export const SoundWave: React.FC<SoundWaveProps> = ({
         {Array.from({ length: bars }, (_, i) => {
           const angle = (i / bars) * 360;
           const radius = 30;
-          const length = (15 + Math.sin(i * 0.8) * 10) * intensityMultipliers[intensity];
-          const startX = 60 + Math.cos((angle - 90) * Math.PI / 180) * radius;
-          const startY = 60 + Math.sin((angle - 90) * Math.PI / 180) * radius;
-          const endX = 60 + Math.cos((angle - 90) * Math.PI / 180) * (radius + length);
-          const endY = 60 + Math.sin((angle - 90) * Math.PI / 180) * (radius + length);
+          const length = Math.round((15 + Math.sin(i * 0.8) * 10) * intensityMultipliers[intensity] * 100) / 100;
+          const startX = Math.round((60 + Math.cos((angle - 90) * Math.PI / 180) * radius) * 100) / 100;
+          const startY = Math.round((60 + Math.sin((angle - 90) * Math.PI / 180) * radius) * 100) / 100;
+          const endX = Math.round((60 + Math.cos((angle - 90) * Math.PI / 180) * (radius + length)) * 100) / 100;
+          const endY = Math.round((60 + Math.sin((angle - 90) * Math.PI / 180) * (radius + length)) * 100) / 100;
           
           return (
             <line
@@ -477,7 +477,7 @@ interface QueenInspiredElementProps {
   className?: string;
 }
 
-export const QueenInspiredElement: React.FC<QueenInspiredElementProps> = ({
+const QueenInspiredElement: React.FC<QueenInspiredElementProps> = ({
   element = 'crest',
   size = 'md',
   style = 'gradient',

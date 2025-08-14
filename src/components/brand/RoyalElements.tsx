@@ -18,7 +18,7 @@ interface CrownProps {
   animate?: boolean;
 }
 
-export const Crown: React.FC<CrownProps> = ({ 
+const Crown: React.FC<CrownProps> = ({ 
   size = 'md', 
   variant = 'simple',
   className,
@@ -180,7 +180,7 @@ interface ScepterDividerProps {
   className?: string;
 }
 
-export const ScepterDivider: React.FC<ScepterDividerProps> = ({
+const ScepterDivider: React.FC<ScepterDividerProps> = ({
   width = 'md',
   orientation = 'horizontal',
   className
@@ -268,7 +268,7 @@ interface RoyalPatternProps {
   className?: string;
 }
 
-export const RoyalPattern: React.FC<RoyalPatternProps> = ({
+const RoyalPattern: React.FC<RoyalPatternProps> = ({
   pattern = 'fleur',
   size = 'md',
   opacity = 0.1,
@@ -356,7 +356,7 @@ interface GemButtonProps {
   onClick?: () => void;
 }
 
-export const GemButton: React.FC<GemButtonProps> = ({
+const GemButton: React.FC<GemButtonProps> = ({
   children,
   variant = 'ruby',
   size = 'md',
@@ -413,7 +413,7 @@ interface OrnamentalFrameProps {
   className?: string;
 }
 
-export const OrnamentalFrame: React.FC<OrnamentalFrameProps> = ({
+const OrnamentalFrame: React.FC<OrnamentalFrameProps> = ({
   children,
   style = 'simple',
   className

@@ -54,6 +54,9 @@ export function Navigation() {
     { name: "Gallery", href: "#gallery", id: "gallery" },
     { name: "Testimonials", href: "#testimonials", id: "testimonials" },
     { name: "Band", href: "#band-members", id: "band-members" },
+    { name: "Tour History", href: "#tour-history", id: "tour-history" },
+    { name: "Music", href: "#music-player", id: "music-player" },
+    { name: "Press Kit", href: "#press-kit", id: "press-kit" },
     { name: "Contact", href: "#contact", id: "contact" },
     { name: "Project Summary", href: "/management-summary", id: "summary" },
   ];

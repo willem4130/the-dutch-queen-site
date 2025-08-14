@@ -144,6 +144,7 @@ export function TheatricalAnimationShowcase() {
                 </TheatricalSection>
               )
             ))}
+          </div>
         </section>
 
         {/* Performance Cards Demo */}
@@ -268,21 +269,21 @@ export function TheatricalAnimationShowcase() {
                 <div>
                   <strong className="text-royal-bronze">2. Use theatrical sections:</strong>
                   <code className="block mt-2 p-3 bg-deep-black rounded-lg text-sm">
-                    &lt;TheatricalSection variant="curtainReveal" withSpotlight&gt;...&lt;/TheatricalSection&gt;
+                    &lt;TheatricalSection variant=&quot;curtainReveal&quot; withSpotlight&gt;...&lt;/TheatricalSection&gt;
                   </code>
                 </div>
                 
                 <div>
                   <strong className="text-royal-bronze">3. Add royal text:</strong>
                   <code className="block mt-2 p-3 bg-deep-black rounded-lg text-sm">
-                    &lt;RoyalText variant="title" gradient shimmer&gt;Your Text&lt;/RoyalText&gt;
+                    &lt;RoyalText variant=&quot;title&quot; gradient shimmer&gt;Your Text&lt;/RoyalText&gt;
                   </code>
                 </div>
                 
                 <div>
                   <strong className="text-royal-bronze">4. Include theatrical buttons:</strong>
                   <code className="block mt-2 p-3 bg-deep-black rounded-lg text-sm">
-                    &lt;TheatricalButton variant="royal" size="lg"&gt;Action&lt;/TheatricalButton&gt;
+                    &lt;TheatricalButton variant=&quot;royal&quot; size=&quot;lg&quot;&gt;Action&lt;/TheatricalButton&gt;
                   </code>
                 </div>
               </div>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Crown, Music, Mic, Guitar, Drums, Piano, Star, Heart, Users, Award } from "lucide-react";
+import { Crown, Music, Mic, Guitar, Drum, Star, Heart, Users, Award } from "lucide-react";
 
 interface BandMember {
   id: string;
@@ -52,8 +52,8 @@ export function BandMembersSection() {
       role: "Lead Vocalist",
       queen_member: "Freddie Mercury",
       primary_instrument: ["Vocals", "Piano", "Stage Performance"],
-      bio: "With over 15 years of performance experience, Alex brings an authentic and respectful tribute to Freddie Mercury's legendary stage presence. His theatrical background and vocal range make every performance a royal experience.",
-      queen_connection: "Studied at the Royal Conservatory and has been performing Queen tribute shows across Europe since 2009. Alex's passion for Freddie's humanitarian work and artistic vision drives every performance.",
+      bio: "With over 15 years of performance experience, Alex brings an authentic and respectful tribute to Freddie Mercury&apos;s legendary stage presence. His theatrical background and vocal range make every performance a royal experience.",
+      queen_connection: "Studied at the Royal Conservatory and has been performing Queen tribute shows across Europe since 2009. Alex&apos;s passion for Freddie&apos;s humanitarian work and artistic vision drives every performance.",
       favorite_song: "Bohemian Rhapsody",
       years_experience: 15,
       photo: "/band/alex-mercury.jpg",
@@ -64,7 +64,7 @@ export function BandMembersSection() {
         "Charity Concert Organizer"
       ],
       musical_background: "Classical piano training since age 6, later discovered rock through Queen. Studied music therapy and performance arts.",
-      fun_fact: "Can perform the entire 'Bohemian Rhapsody' operatic section in 4 different languages"
+      fun_fact: "Can perform the entire &lsquo;Bohemian Rhapsody&rsquo; operatic section in 4 different languages"
     },
     {
       id: "2", 
@@ -73,8 +73,8 @@ export function BandMembersSection() {
       role: "Lead Guitarist",
       queen_member: "Brian May",
       primary_instrument: ["Electric Guitar", "Acoustic Guitar", "Red Special Replica"],
-      bio: "Sophie is a masterful guitarist who has crafted her own Red Special replica and studied Brian May's unique guitar techniques extensively. Her solos capture the astronomical beauty of Brian's compositions.",
-      queen_connection: "Built her first Red Special replica at age 16 and has been perfecting Brian May's iconic sound ever since. Studied astrophysics as a tribute to Brian's academic background.",
+      bio: "Sophie is a masterful guitarist who has crafted her own Red Special replica and studied Brian May&apos;s unique guitar techniques extensively. Her solos capture the astronomical beauty of Brian&apos;s compositions.",
+      queen_connection: "Built her first Red Special replica at age 16 and has been perfecting Brian May&apos;s iconic sound ever since. Studied astrophysics as a tribute to Brian&apos;s academic background.",
       favorite_song: "The Show Must Go On",
       years_experience: 12,
       photo: "/band/sophie-may.jpg",
@@ -84,7 +84,7 @@ export function BandMembersSection() {
         "Guitar Workshop Instructor",
         "300+ Solo Performances"
       ],
-      musical_background: "Started with classical guitar, transitioned to rock. Self-taught in Brian May's techniques through extensive study of Queen recordings.",
+      musical_background: "Started with classical guitar, transitioned to rock. Self-taught in Brian May&apos;s techniques through extensive study of Queen recordings.",
       fun_fact: "Uses authentic sixpence coins as guitar picks, just like Brian May"
     },
     {
@@ -94,7 +94,7 @@ export function BandMembersSection() {
       role: "Bass Guitarist",
       queen_member: "John Deacon",
       primary_instrument: ["Bass Guitar", "Electric Guitar", "Synthesizer"],
-      bio: "Marcus provides the steady foundation that every Queen song demands. His deep understanding of John Deacon's melodic bass lines and technical precision keeps the band grounded while others soar.",
+      bio: "Marcus provides the steady foundation that every Queen song demands. His deep understanding of John Deacon&apos;s melodic bass lines and technical precision keeps the band grounded while others soar.",
       queen_connection: "Like John Deacon, Marcus values the music over the spotlight. His technical knowledge of Queen's recordings and bass arrangements is encyclopedic.",
       favorite_song: "Another One Bites the Dust",
       years_experience: 14,
@@ -115,8 +115,8 @@ export function BandMembersSection() {
       role: "Drummer",
       queen_member: "Roger Taylor",
       primary_instrument: ["Drums", "Vocals", "Percussion"],
-      bio: "David's powerful drumming and backing vocals recreate the driving force behind Queen's biggest hits. His energy and precision capture Roger Taylor's dynamic style and contribute to the band's authentic sound.",
-      queen_connection: "Studied Roger Taylor's drumming techniques and vocal harmonies extensively. David's high-energy performance style embodies Roger's rock star charisma.",
+      bio: "David&apos;s powerful drumming and backing vocals recreate the driving force behind Queen&apos;s biggest hits. His energy and precision capture Roger Taylor&apos;s dynamic style and contribute to the band&apos;s authentic sound.",
+      queen_connection: "Studied Roger Taylor&apos;s drumming techniques and vocal harmonies extensively. David&apos;s high-energy performance style embodies Roger&apos;s rock star charisma.",
       favorite_song: "We Will Rock You",
       years_experience: 13,
       photo: "/band/david-taylor.jpg",
@@ -126,8 +126,8 @@ export function BandMembersSection() {
         "200+ Festival Performances",
         "Backing Vocals Specialist"
       ],
-      musical_background: "Professional drummer for 13 years, studied at Berklee Online. Known for his stamina and ability to maintain Roger's signature backbeat through entire concerts.",
-      fun_fact: "Uses the exact same Ludwig drum kit configuration that Roger Taylor used during Queen's peak years"
+      musical_background: "Professional drummer for 13 years, studied at Berklee Online. Known for his stamina and ability to maintain Roger&apos;s signature backbeat through entire concerts.",
+      fun_fact: "Uses the exact same Ludwig drum kit configuration that Roger Taylor used during Queen&apos;s peak years"
     }
   ];
 
@@ -136,7 +136,7 @@ export function BandMembersSection() {
       case "lead vocalist": return Mic;
       case "lead guitarist": return Guitar;
       case "bass guitarist": return Music;
-      case "drummer": return Drums;
+      case "drummer": return Drum;
       default: return Music;
     }
   };
@@ -181,7 +181,7 @@ export function BandMembersSection() {
             Meet The Band
           </h2>
           <p className="text-content-primary text-text-muted-light max-w-3xl mx-auto">
-            Four talented musicians united by their passion for Queen's music and dedicated to honoring 
+            Four talented musicians united by their passion for Queen&apos;s music and dedicated to honoring 
             the legacy of Freddie, Brian, Roger, and John with authenticity and respect.
           </p>
         </motion.div>
@@ -377,7 +377,7 @@ export function BandMembersSection() {
               Experience Queen Like Never Before
             </h3>
             <p className="text-content-primary text-text-muted-light mb-8 max-w-2xl mx-auto">
-              Four musicians, countless hours of dedication, and one shared passion: bringing Queen's 
+              Four musicians, countless hours of dedication, and one shared passion: bringing Queen&apos;s 
               legendary music to life with authenticity, respect, and royal flair.
             </p>
             
