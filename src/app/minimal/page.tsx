@@ -1,6 +1,6 @@
 import { HeroSectionMinimal } from "@/components/sections/hero-minimal";
 import { AboutSection } from "@/components/sections/about";
-import { PerformancesSection } from "@/components/sections/performances";
+import { TourDatesSection } from "@/components/sections/tour-dates";
 import { MediaGallerySection } from "@/components/sections/gallery";
 import { ContactSection } from "@/components/sections/contact";
 
@@ -36,7 +36,7 @@ export default function MinimalVersion() {
           <AboutSection />
         </div>
         <div id="performances">
-          <PerformancesSection />
+          <TourDatesSection />
         </div>
         <div id="gallery">
           <MediaGallerySection />

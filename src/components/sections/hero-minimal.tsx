@@ -33,9 +33,11 @@ export function HeroSectionMinimal() {
           >
             <h1 className="text-5xl md:text-7xl font-bold text-yellow-500 mb-3" 
                 style={{ 
-                  fontFamily: 'Inter, system-ui, sans-serif',
-                  letterSpacing: '-0.02em',
-                  fontWeight: '700'
+                  fontFamily: 'Pinyon Script, Allura, cursive',
+                  letterSpacing: '0.05em',
+                  fontWeight: '400',
+                  transform: 'rotate(-0.5deg)',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
                 }}>
               The Dutch Queen
             </h1>
