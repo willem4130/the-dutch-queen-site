@@ -122,7 +122,7 @@ const ShowTimelineSection = () => {
             </h2>
           </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Follow our royal journey across Europe. Each performance tells a unique story of Queen's legacy.
+            Follow our royal journey across Europe. Each performance tells a unique story of Queen&apos;s legacy.
           </p>
         </motion.div>
 
@@ -298,7 +298,7 @@ const ShowTimelineSection = () => {
             <Crown className="w-12 h-12 text-royal-bronze mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Join the Royal Experience</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Don't miss your chance to be part of Queen's legacy. Every show is a unique celebration of the greatest hits in rock history.
+              Don&apos;t miss your chance to be part of Queen&apos;s legacy. Every show is a unique celebration of the greatest hits in rock history.
             </p>
             <button className="bg-gradient-to-r from-royal-bronze to-queen-burgundy text-white px-8 py-3 rounded-full font-semibold hover:from-royal-bronze-dark hover:to-queen-burgundy-dark transition-all duration-200 transform hover:scale-105 flex items-center gap-2 mx-auto">
               View All Dates

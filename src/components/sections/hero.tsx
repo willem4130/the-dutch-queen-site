@@ -3,8 +3,7 @@
 import { Compare } from "@/components/ui/compare";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { RoyalEntranceHero, RoyalText, TheatricalButton } from "@/components/animations/TheatricalComponents";
-import { useTheatricalAnimation } from "@/lib/animations/theatrical-system";
+import { RoyalEntranceHero } from "@/components/animations/TheatricalComponents";
 import { 
   EnhancedLogo, 
   Crown, 

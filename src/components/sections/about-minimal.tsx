@@ -60,11 +60,11 @@ export function AboutSectionMinimal() {
             </h3>
             
             <p className="text-gray-300 leading-relaxed">
-              For over a decade, The Dutch Queen has been recreating the magic of Queen's legendary performances. Our band captures not just the sound, but the spirit and energy that made Queen one of the greatest rock bands of all time.
+              For over a decade, The Dutch Queen has been recreating the magic of Queen&apos;s legendary performances. Our band captures not just the sound, but the spirit and energy that made Queen one of the greatest rock bands of all time.
             </p>
             
             <p className="text-gray-300 leading-relaxed">
-              From intimate acoustic sets to full-scale theatrical productions, we deliver performances that honor Queen's legacy while creating unforgettable experiences for audiences of all ages.
+              From intimate acoustic sets to full-scale theatrical productions, we deliver performances that honor Queen&apos;s legacy while creating unforgettable experiences for audiences of all ages.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
@@ -101,7 +101,7 @@ export function AboutSectionMinimal() {
             {/* Call-out text */}
             <div className="absolute bottom-6 left-6 right-6">
               <p className="text-white font-semibold text-lg">
-                "The show must go on" - and it does, with The Dutch Queen
+&ldquo;The show must go on&rdquo; - and it does, with The Dutch Queen
               </p>
             </div>
           </motion.div>

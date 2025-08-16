@@ -5,7 +5,10 @@
  * Built on enhanced Framer Motion with performance optimization and accessibility compliance
  */
 
-import { Variants, Transition, useReducedMotion, useInView } from 'framer-motion';
+import { Variants, useReducedMotion, useInView } from 'framer-motion';
+
+// Type for cubic bezier easing curves
+type CubicBezierEasing = [number, number, number, number];
 import { useRef, useEffect, useState } from 'react';
 
 // ========================================
@@ -36,7 +39,7 @@ export const theatricalTiming = {
 };
 
 // Royal easing curves for theatrical motion
-export const royalEasing = {
+export const royalEasing: Record<string, CubicBezierEasing> = {
   entrance: [0.25, 0.46, 0.45, 0.94],        // Dramatic entrance
   rockEnergy: [0.68, -0.55, 0.265, 1.55],    // High energy bounce
   elegance: [0.45, 0, 0.25, 1],              // Smooth sophistication
@@ -283,7 +286,7 @@ export const mobileVariants: Record<string, Variants> = {
 // ========================================
 
 export const useTheatricalAnimation = (variant: keyof typeof theatricalVariants) => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(false);
   const isInView = useInView(ref, { 
@@ -357,8 +360,17 @@ export const usePerformanceTiming = (bpm: number = 120) => {
 // ANIMATION ORCHESTRATION
 // ========================================
 
+interface AnimationSequence {
+  isPlaying: boolean;
+  animations: Array<{
+    target: string;
+    variant: keyof typeof theatricalVariants;
+    delay?: number;
+  }>;
+}
+
 export class TheatricalOrchestrator {
-  private sequences: Map<string, any> = new Map();
+  private sequences: Map<string, AnimationSequence> = new Map();
   
   createSequence(name: string, animations: Array<{
     target: string;
@@ -366,7 +378,6 @@ export class TheatricalOrchestrator {
     delay?: number;
   }>) {
     this.sequences.set(name, {
-      name,
       animations,
       isPlaying: false
     });

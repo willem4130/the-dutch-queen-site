@@ -72,7 +72,7 @@ const ShowCardsMobile = () => {
   const rotate = useTransform(x, [-200, 200], [-25, 25]);
   const opacity = useTransform(x, [-200, -150, 0, 150, 200], [0, 1, 1, 1, 0]);
 
-  const handleDragEnd = (event: any, info: PanInfo) => {
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const threshold = 100;
     
     if (info.offset.x > threshold) {

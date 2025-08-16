@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { TheatricalSection, RoyalText, PerformanceCard, PearlCascade } from "@/components/animations/TheatricalComponents";
-import { useTheatricalAnimation } from "@/lib/animations/theatrical-system";
 import { cn } from "@/lib/utils";
 import { 
   Crown, 

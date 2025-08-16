@@ -203,9 +203,9 @@ export function TypographySystem() {
                 Intimate Acoustic Session
               </h4>
               <p className="text-content-primary text-pearl-white mb-4">
-                Experience Queen's timeless classics in an intimate acoustic setting. 
-                From the tender beauty of "Love of My Life" to the raw emotion of 
-                "The Show Must Go On."
+                Experience Queen&apos;s timeless classics in an intimate acoustic setting. 
+                From the tender beauty of &ldquo;Love of My Life&rdquo; to the raw emotion of 
+                &ldquo;The Show Must Go On.&rdquo;
               </p>
               <p className="text-content-secondary text-text-muted-light">
                 Limited seating available. Book early to secure your place for 

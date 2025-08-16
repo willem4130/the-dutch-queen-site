@@ -206,7 +206,7 @@ export function MusicPlayerSection() {
       audioUrl: "/audio/show-must-go-on-acoustic.mp3",
       albumArt: "/audio/covers/show-must-go-on.jpg",
       category: "acoustic",
-      description: "An emotionally powerful acoustic rendition that showcases the raw emotion and storytelling at the heart of Queen's music.",
+      description: "An emotionally powerful acoustic rendition that showcases the raw emotion and storytelling at the heart of Queen&apos;s music.",
       recordedAt: "Villa Eikenhorst Private Event",
       instruments: ["Vocals", "Piano", "Light Strings"],
       highlights: [
@@ -620,8 +620,8 @@ export function MusicPlayerSection() {
               Hear The Magic Live
             </h3>
             <p className="text-content-primary text-text-muted-light mb-8 max-w-2xl mx-auto">
-              These samples only capture a fraction of The Dutch Queen's live energy. 
-              Experience the full power of Queen's music performed with passion and authenticity.
+              These samples only capture a fraction of The Dutch Queen&apos;s live energy. 
+              Experience the full power of Queen&apos;s music performed with passion and authenticity.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">

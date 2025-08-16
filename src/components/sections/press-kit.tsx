@@ -14,7 +14,6 @@ import {
   Award,
   Camera,
   Mic,
-  ExternalLink,
   Mail,
   Phone,
   Globe,
@@ -42,13 +41,12 @@ interface TechnicalSpec {
   items: {
     label: string;
     value: string;
-    icon?: any;
+    icon?: React.ComponentType<{ className?: string }>;
   }[];
 }
 
 export function PressKitSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [expandedSpecs, setExpandedSpecs] = useState<string | null>(null);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },

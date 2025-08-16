@@ -32,7 +32,7 @@ export const TheatricalMotionConfig: React.FC<TheatricalMotionConfigProps> = ({
       reducedMotion="user"
       transition={{ 
         duration: 0.6, 
-        ease: royalEasing.entrance 
+        ease: royalEasing.entrance
       }}
     >
       <AnimatePresence mode="wait">
@@ -215,7 +215,7 @@ const RoyalNavigationItem: React.FC<RoyalNavigationItemProps> = ({
       `}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.6, ease: royalEasing.elegance }}
+      transition={{ delay, duration: 0.6, ease: royalEasing.elegance  }}
       whileHover={{ 
         scale: 1.05,
         color: 'var(--crown-gold)',
@@ -293,7 +293,7 @@ export const TheatricalButton: React.FC<TheatricalButtonProps> = ({
         boxShadow: disabled ? 'none' : '0 10px 30px rgba(212, 175, 55, 0.3)'
       }}
       whileTap={{ scale: disabled ? 1 : 0.98 }}
-      transition={{ duration: 0.2, ease: royalEasing.elegance }}
+      transition={{ duration: 0.2, ease: royalEasing.elegance  }}
     >
       {children}
       
@@ -387,7 +387,7 @@ export const RoyalText: React.FC<RoyalTextProps> = ({
         visible: { 
           opacity: 1, 
           y: 0,
-          transition: { duration: 0.6, ease: royalEasing.elegance }
+          transition: { duration: 0.6, ease: royalEasing.elegance  }
         }
       }}
       initial="hidden"
